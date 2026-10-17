@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1a2420">
+  <title>The Artist's Journey — Master Om Prakash Kumawat | Indian Miniature Heritage</title>
+  <meta name="description"
+    content="Explore the life, lineage, and sacred alchemy of master miniature artist Om Prakash Kumawat. Over 26 years preserving India's royal schools across Rashtrapati Bhavan, the PMO, and global collections.">
+
+  <!-- Preconnect and Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f2e9;
+      --paper-deep: #ebe6d8;
+      --paper-warm: #f5f2e9;
+      --paper-cream: #ebe6d8;
+      --paper-card: #FFFFFF;
+      --ink: #25352d;
+      --ink-rich: #17211c;
+      --ink-soft: #526057;
+      --ink-muted: #526057;
+      --ink-subtle: #738279;
+      --rust: #a85f45;
+      --gold: #b89b64;
+      --gold-dark: #8f723c;
+      --gold-light: #dfcfa9;
+      --gold-glow: rgba(184, 155, 100, 0.22);
+      --vermilion: #C24A32;
+      --lapis: #1C3354;
+      --malachite: #2B4E3A;
+      --line: rgba(37, 53, 45, .18);
+      --line-gold: rgba(184, 155, 100, 0.35);
+      --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+      --page-gutter: clamp(1.25rem, 6.5vw, 7rem);
+
+      --font-display: "Cinzel", Georgia, serif;
+      --font-serif: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+      --font-sans: "Avenir Next", Avenir, "Segoe UI", "Plus Jakarta Sans", system-ui, sans-serif;
+
+      --container: 1220px;
+      --gutter: clamp(1.25rem, 6.5vw, 7rem);
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+      --shadow-subtle: 0 4px 20px rgba(37, 53, 45, 0.05);
+      --shadow-premium: 0 16px 40px -10px rgba(37, 53, 45, 0.12);
+      --shadow-gold: 0 10px 30px -5px rgba(184, 155, 100, 0.25);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--paper);
+      color: var(--ink);
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--paper);
+      color: var(--ink);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      selection-background-color: var(--gold);
+      selection-color: #fff;
+    }
+
+    ::selection {
+      background: var(--gold-light);
+      color: var(--ink-rich);
+    }
+
+    /* TYPOGRAPHY UTILITIES */
+    h1,
+    h2,
+    h3,
+    h4,
+    .font-serif {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--ink-rich);
+    }
+
+    .font-display {
+      font-family: var(--font-display);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: var(--ink-muted);
+      font-size: 1.05rem;
+      font-weight: 350;
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* HEADER & ANNOUNCEMENT (MATCHING INDEX.HTML EXACTLY) */
+    .announcement {
+      padding: .65rem 1rem;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: .62rem;
+      letter-spacing: .19em;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: var(--sans);
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 100;
+      top: 0;
+      display: flex;
+      min-height: 5.25rem;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--page-gutter);
+      border-bottom: 1px solid var(--line);
+      background: rgb(245 242 233 / 94%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+      font-family: var(--serif);
+      font-size: 1.11rem;
+      letter-spacing: .08em;
+      white-space: nowrap;
+      color: var(--ink);
+    }
+
+    .wordmark-mark {
+      display: grid;
+      width: 2.15rem;
+      height: 2.15rem;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--rust);
+      font-size: .83rem;
+      font-style: italic;
+      letter-spacing: 0;
+      background: transparent;
+    }
+
+    .wordmark amp {
+      color: var(--rust);
+      font-style: italic;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(1.25rem, 3vw, 3.1rem);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: .5rem 0;
+      color: var(--ink-soft);
+      font-family: var(--sans);
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      transition: color .25s ease;
+      font-weight: 500;
+    }
+
+    .nav-links a::after {
+      position: absolute;
+      right: 0;
+      bottom: .18rem;
+      left: 0;
+      height: 1px;
+      background: var(--rust);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform .3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.is-current {
+      color: var(--rust);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.is-current::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 2.75rem;
+      height: 2.75rem;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    .menu-toggle svg {
+      width: 1.15rem;
+      height: 1.15rem;
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, #c5a059 0%, #a8823b 100%);
+      color: #fff;
+      padding: 0.75rem 1.6rem;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 15px rgba(168, 130, 59, 0.25);
+      cursor: pointer;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(168, 130, 59, 0.35);
+      color: #fff;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      border: 1px solid var(--ink);
+      color: var(--ink);
+      padding: 0.75rem 1.6rem;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .btn-outline:hover {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    /* HERO SECTION */
+    .hero-journey {
+      position: relative;
+      padding: clamp(4rem, 8vw, 7.5rem) var(--gutter) 4rem;
+      background: radial-gradient(circle at 80% 20%, rgba(197, 160, 89, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 10% 80%, rgba(163, 72, 50, 0.05) 0%, transparent 50%),
+        var(--paper);
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .hero-wrapper {
+      max-width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(2.5rem, 5vw, 5.5rem);
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      color: var(--rust);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-eyebrow::before {
+      content: "";
+      width: 2rem;
+      height: 1px;
+      background: var(--rust);
+    }
+
+    .hero-heading {
+      font-size: clamp(2.8rem, 5.2vw, 4.8rem);
+      font-weight: 350;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+      color: var(--ink-rich);
+    }
+
+    .hero-heading em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold-dark);
+      display: inline-block;
+    }
+
+    .hero-subhead {
+      font-family: var(--font-serif);
+      font-size: clamp(1.35rem, 2vw, 1.7rem);
+      font-style: italic;
+      color: var(--ink-muted);
+      line-height: 1.45;
+      margin-bottom: 1.8rem;
+      border-left: 2px solid var(--gold);
+      padding-left: 1.2rem;
+    }
+
+    .hero-intro {
+      font-size: 1.1rem;
+      line-height: 1.85;
+      color: var(--ink);
+      margin-bottom: 2.2rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .hero-badge-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-badge-num {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--ink-rich);
+      line-height: 1;
+    }
+
+    .hero-badge-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-subtle);
+      margin-top: 0.35rem;
+    }
+
+    /* HERO VISUAL FRAME */
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-frame-outer {
+      position: relative;
+      padding: 1.2rem;
+      background: #FFFFFF;
+      box-shadow: var(--shadow-premium);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+    }
+
+    .hero-frame-inner {
+      position: relative;
+      border: 1px solid var(--gold);
+      padding: 0.5rem;
+      overflow: hidden;
+      background: var(--paper-warm);
+    }
+
+    .hero-frame-inner img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 4/5;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-frame-outer:hover .hero-frame-inner img {
+      transform: scale(1.025);
+    }
+
+    .provenance-seal {
+      position: absolute;
+      top: -1.5rem;
+      right: -1.5rem;
+      width: 6.5rem;
+      height: 6.5rem;
+      border-radius: 50%;
+      background: var(--ink-rich);
+      color: var(--gold-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: var(--shadow-premium);
+      border: 2px solid var(--gold);
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.5rem;
+      line-height: 1.3;
+      transform: rotate(8deg);
+      z-index: 2;
+    }
+
+    .hero-caption-card {
+      margin-top: 1rem;
+      padding: 0.8rem 1rem;
+      background: var(--paper-warm);
+      border-left: 2px solid var(--rust);
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      font-style: italic;
+    }
+
+    /* SECTION SCAFFOLDING */
+    section {
+      padding: clamp(4.5rem, 8vw, 7.5rem) var(--gutter);
+      position: relative;
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+      max-width: 800px;
+    }
+
+    .section-header.centered {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-display);
+      font-size: 0.74rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+      line-height: 1.15;
+      color: var(--ink-rich);
+      margin-bottom: 1.2rem;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--gold-dark);
+    }
+
+    .section-lead {
+      font-size: 1.15rem;
+      color: var(--ink-muted);
+      line-height: 1.75;
+    }
+
+    /* 1. ROOTS & LINEAGE (GURU-SHISHYA) */
+    .roots-section {
+      background: var(--paper-warm);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .lineage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem, 5vw, 5rem);
+      align-items: center;
+    }
+
+    .lineage-content p {
+      margin-bottom: 1.4rem;
+      font-size: 1.05rem;
+    }
+
+    .guru-scroll {
+      background: #FFFFFF;
+      padding: 2.2rem;
+      border: 1px solid var(--line-gold);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-subtle);
+      margin-top: 2rem;
+      position: relative;
+    }
+
+    .guru-scroll::before {
+      content: "गुरु-शिष्य परम्परा";
+      position: absolute;
+      top: -0.75rem;
+      left: 2rem;
+      background: var(--gold);
+      color: #fff;
+      padding: 0.2rem 0.8rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      font-family: var(--font-display);
+      border-radius: var(--radius-sm);
+    }
+
+    .guru-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .guru-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .guru-icon {
+      color: var(--gold-dark);
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+
+    .guru-item h4 {
+      font-size: 1.15rem;
+      color: var(--ink-rich);
+      font-weight: 500;
+    }
+
+    .guru-item p {
+      font-size: 0.88rem;
+      margin-bottom: 0;
+      color: var(--ink-subtle);
+    }
+
+    .lineage-visual {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .lineage-card {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      padding: 1rem;
+      box-shadow: var(--shadow-premium);
+      border-radius: var(--radius-sm);
+    }
+
+    .lineage-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+      border: 1px solid var(--line);
+    }
+
+    .quote-box {
+      background: var(--ink-rich);
+      color: var(--paper-warm);
+      padding: 2.2rem;
+      border-radius: var(--radius-sm);
+      position: relative;
+      border-left: 4px solid var(--gold);
+    }
+
+    .quote-box blockquote {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--paper);
+      margin-bottom: 1rem;
+    }
+
+    .quote-box cite {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      display: block;
+      font-style: normal;
+    }
+
+    /* 2. THE 9 CLASSICAL SCHOOLS CURATION */
+    .schools-section {
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .schools-mosaic {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .school-card {
+      background: #FFFFFF;
+      padding: 1.8rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      transition: all 0.4s ease;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .school-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .school-num {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      color: var(--gold-dark);
+      letter-spacing: 0.15em;
+      margin-bottom: 0.5rem;
+    }
+
+    .school-card h3 {
+      font-size: 1.45rem;
+      color: var(--ink-rich);
+      margin-bottom: 0.6rem;
+    }
+
+    .school-card p {
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    .school-tag {
+      margin-top: 1.2rem;
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--rust);
+    }
+
+    /* 3. ALCHEMY OF THE CRAFT */
+    .alchemy-section {
+      background: #16201B;
+      color: var(--paper-warm);
+      border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    }
+
+    .alchemy-section .section-title {
+      color: var(--paper);
+    }
+
+    .alchemy-section .section-lead {
+      color: #9DB0A5;
+    }
+
+    .alchemy-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .alchemy-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(197, 160, 89, 0.2);
+      padding: 2.2rem 1.6rem;
+      border-radius: var(--radius-sm);
+      position: relative;
+      backdrop-filter: blur(8px);
+      transition: all 0.4s ease;
+    }
+
+    .alchemy-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--gold);
+      transform: translateY(-5px);
+    }
+
+    .alchemy-glyph {
+      width: 3.2rem;
+      height: 3.2rem;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin-bottom: 1.5rem;
+      color: var(--gold);
+      font-size: 1.2rem;
+      background: rgba(197, 160, 89, 0.08);
+    }
+
+    .alchemy-card h3 {
+      color: var(--gold-light);
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .alchemy-card p {
+      color: #B2C2B8;
+      font-size: 0.94rem;
+      line-height: 1.7;
+    }
+
+    .alchemy-highlight {
+      margin-top: 1.2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(197, 160, 89, 0.15);
+      font-size: 0.78rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-family: var(--font-display);
+    }
+
+    /* PROCESS SPOTLIGHT BANNER */
+    .process-banner {
+      margin-top: 4rem;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(197, 160, 89, 0.25);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .process-banner-img {
+      position: relative;
+    }
+
+    .process-banner-img img {
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .process-banner-text {
+      padding: clamp(2rem, 4vw, 3.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .process-banner-text h3 {
+      color: var(--paper);
+      font-size: 1.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .process-banner-text p {
+      color: #C1D0C7;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+
+    /* 4. THE ROYAL CANVAS & RECOGNITION */
+    .provenance-section {
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .canvas-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: clamp(2.5rem, 5vw, 4.5rem);
+      align-items: center;
+    }
+
+    .monumental-card {
+      background: #FFFFFF;
+      padding: 1.2rem;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-premium);
+      border-radius: var(--radius-sm);
+    }
+
+    .monumental-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--gold);
+    }
+
+    .monumental-meta {
+      padding: 1.2rem 0.5rem 0.2rem;
+    }
+
+    .monumental-badge {
+      display: inline-block;
+      background: var(--rust);
+      color: #FFFFFF;
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      padding: 0.25rem 0.6rem;
+      text-transform: uppercase;
+      border-radius: 2px;
+      margin-bottom: 0.6rem;
+    }
+
+    .monumental-title {
+      font-size: 1.35rem;
+      color: var(--ink-rich);
+      margin-bottom: 0.4rem;
+    }
+
+    .monumental-desc {
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+    }
+
+    .venues-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .venue-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.2rem;
+      padding: 1.4rem;
+      background: #FFFFFF;
+      border-left: 3px solid var(--gold);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .venue-icon {
+      width: 2.8rem;
+      height: 2.8rem;
+      background: var(--paper-warm);
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold-dark);
+      font-size: 1rem;
+    }
+
+    .venue-card h4 {
+      font-size: 1.2rem;
+      color: var(--ink-rich);
+      margin-bottom: 0.2rem;
+    }
+
+    .venue-card p {
+      font-size: 0.92rem;
+      margin-bottom: 0;
+    }
+
+    /* 5. KEEPING THE FLAME ALIVE (MENTORSHIP) */
+    .legacy-section {
+      background: var(--paper-warm);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .legacy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem, 5vw, 4.5rem);
+      align-items: center;
+    }
+
+    .legacy-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .pillar-box {
+      padding: 1.5rem;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+    }
+
+    .pillar-box h4 {
+      font-size: 1.15rem;
+      color: var(--rust);
+      margin-bottom: 0.35rem;
+    }
+
+    .pillar-box p {
+      font-size: 0.92rem;
+      margin-bottom: 0;
+    }
+
+    .legacy-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .legacy-img-frame {
+      background: #fff;
+      padding: 0.6rem;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-subtle);
+      border-radius: var(--radius-sm);
+    }
+
+    .legacy-img-frame img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .legacy-img-frame.span-two {
+      grid-column: span 2;
+    }
+
+    .legacy-img-frame.span-two img {
+      height: 260px;
+    }
+
+    /* 6. CALL TO ACTION */
+    .cta-sanctuary {
+      background: radial-gradient(circle at 50% 50%, #25372E 0%, #111A16 100%);
+      color: #FFFFFF;
+      text-align: center;
+      padding: clamp(5rem, 9vw, 8.5rem) var(--gutter);
+      position: relative;
+    }
+
+    .cta-crest {
+      width: 4rem;
+      height: 4rem;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      margin: 0 auto 1.8rem;
+      display: grid;
+      place-items: center;
+      color: var(--gold-light);
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-style: italic;
+    }
+
+    .cta-sanctuary h2 {
+      font-size: clamp(2.6rem, 4.8vw, 4.4rem);
+      color: #FFFFFF;
+      margin-bottom: 1.2rem;
+      line-height: 1.15;
+    }
+
+    .cta-sanctuary h2 em {
+      color: var(--gold-light);
+      font-style: italic;
+    }
+
+    .cta-sanctuary p {
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+      color: #BCCEC4;
+      font-size: 1.15rem;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+
+    .cta-actions .btn-gold {
+      padding: 0.95rem 2.2rem;
+      font-size: 0.8rem;
+    }
+
+    .cta-actions .btn-outline {
+      border-color: rgba(255, 255, 255, 0.4);
+      color: #FFFFFF;
+      padding: 0.95rem 2.2rem;
+      font-size: 0.8rem;
+    }
+
+    .cta-actions .btn-outline:hover {
+      background: #FFFFFF;
+      color: var(--ink-rich);
+    }
+
+    /* FOOTER */
+    .master-footer {
+      background: #0B110E;
+      color: #7A8D83;
+      padding: 4rem var(--gutter) 2rem;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(197, 160, 89, 0.15);
+    }
+
+    .footer-top {
+      max-width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      letter-spacing: 0.15em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      max-width: var(--container);
+      margin: 2rem auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: #55665D;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 1024px) {
+
+      .hero-wrapper,
+      .lineage-grid,
+      .canvas-layout,
+      .legacy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .schools-mosaic {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .alchemy-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-banner {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .schools-mosaic {
+        grid-template-columns: 1fr;
+      }
+
+      .alchemy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .legacy-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .legacy-img-frame.span-two {
+        grid-column: span 1;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+
+      .hero-heading {
+        font-size: 2.4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Announcement / Curator Banner -->
+  <div class="top-curator-bar">
+    Indian Miniature Artistry &bull; The Living Heritage of Jaipur &bull; Est. 1986
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand" aria-label="Return to Om and Priyanka Home">
+        <span class="brand-crest" aria-hidden="true">O</span>
+        <div class="brand-title">OM <span>&amp;</span> PRIYANKA</div>
+      </a>
+      <nav aria-label="Page Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html#collection" class="nav-link">The Collection</a></li>
+          <li><a href="story.html" class="nav-link active">Our Story &amp; Lineage</a></li>
+          <li><a href="#alchemy" class="nav-link">The Alchemy</a></li>
+          <li><a href="#provenance" class="nav-link">Royal Canvas</a></li>
+          <li><a href="#mentorship" class="nav-link">Mentorship</a></li>
+          <li><a href="#inquire" class="btn-gold">Commission Art</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-journey" id="hero">
+      <div class="hero-wrapper">
+        <div class="hero-text-block">
+          <span class="hero-eyebrow">A Living Master of Rajasthan</span>
+          <h1 class="hero-heading">Where Centuries of Royal Lineage Breathe Upon a <em>Single Hair</em>.</h1>
+          <p class="hero-subhead">"Eyes and complete devotion must be surrendered—only then is a miniature truly born."
+          </p>
+          <p class="hero-intro">
+            Born in 1986 in the historic village of Boraj near Jaipur, <strong>Om Prakash Kumawat</strong> has spent
+            more than twenty-six years in quiet, transcendent dialogue with India’s greatest artistic traditions. With
+            mineral stones ground by hand in sea shells, pure twenty-four-karat gold leaf, and single-hair squirrel
+            brushes, he resurrects the sacred intimacy of India’s royal miniature ateliers for the modern world.
+          </p>
+          <div class="hero-badges">
+            <div class="hero-badge-item">
+              <span class="hero-badge-num">26+</span>
+              <span class="hero-badge-label">Years of Devotion</span>
+            </div>
+            <div class="hero-badge-item" style="border-left: 1px solid var(--line); padding-left: 1.2rem;">
+              <span class="hero-badge-num">9</span>
+              <span class="hero-badge-label">Classical Schools Mastered</span>
+            </div>
+            <div class="hero-badge-item" style="border-left: 1px solid var(--line); padding-left: 1.2rem;">
+              <span class="hero-badge-num">100%</span>
+              <span class="hero-badge-label">Natural Stone &amp; Gold</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="provenance-seal">
+            <span>Rashtrapati<br>Bhavan &bull; PMO<br>Showcased</span>
+          </div>
+          <div class="hero-frame-outer">
+            <div class="hero-frame-inner">
+              <img src="images/image2.jpeg"
+                alt="Master Om Prakash Kumawat observing an intricate miniature artwork in his studio" loading="eager">
+            </div>
+            <div class="hero-caption-card">
+              Ustad Om Prakash Kumawat at his atelier desk, where weeks of meditation produce single strokes finer than
+              human hair.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: ROOTS & LINEAGE (GURU-SHISHYA PARAMPARA) -->
+    <section class="roots-section" id="lineage">
+      <div class="container">
+        <div class="lineage-grid">
+          <div class="lineage-content">
+            <span class="section-eyebrow">The Sacred Pedigree</span>
+            <h2 class="section-title">The Roots of <em>Boraj</em> &amp; The Guru-Shishya Parampara</h2>
+            <p>
+              True miniature mastery cannot be acquired from textbooks; it is an inheritance transferred through
+              silence, observation, and relentless discipline beneath the watchful gaze of a master. Om Prakash’s path
+              began under humble skies in Boraj, a village nestled on the fringes of Jaipur. As a young boy selling
+              lassi to help sustain his family, fate intervened on his visits to the walled Pink City, where he
+              witnessed an elder relative painting miniatures. In that moment of revelation, an innate artistic fire
+              took hold.
+            </p>
+            <p>
+              Recognizing that miniature art is not merely an aesthetic pursuit but a spiritual tapasya (devotion), he
+              surrendered himself completely to the sacred Guru-Shishya tradition of Jaipur. Over decades of patient
+              surrender, he trained under the legendary Jaipur masters:
+            </p>
+
+            <div class="guru-scroll">
+              <ul class="guru-list">
+                <li class="guru-item">
+                  <span class="guru-icon">&#10022;</span>
+                  <div>
+                    <h4>Shri Rajesh Ji</h4>
+                    <p>Imparted the ancient geometry of courtly composition and the exacting science of facial
+                      contouring (*chinnha-vidya*).</p>
+                  </div>
+                </li>
+                <li class="guru-item">
+                  <span class="guru-icon">&#10022;</span>
+                  <div>
+                    <h4>Shri Rajendra Gaid Ji</h4>
+                    <p>Unveiled the confidential secrets of natural pigment extraction, stone levigation, and the
+                      mystical application of Hilkari gold.</p>
+                  </div>
+                </li>
+                <li class="guru-item">
+                  <span class="guru-icon">&#10022;</span>
+                  <div>
+                    <h4>Shri R.K. Sharma Ji</h4>
+                    <p>Instilled the classical philosophy, emotional depth (*bhava*), and botanical precision that
+                      define royal Mewar and Kangra miniatures.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="lineage-visual">
+            <div class="lineage-card">
+              <img src="images/image3.jpeg" alt="Om Prakash Kumawat in his studio sanctuary" loading="lazy">
+            </div>
+            <div class="quote-box">
+              <blockquote>
+                "A small miniature takes months, but preparing the colors takes longer still. It demands one hundred
+                percent surrender. A queen's nose-ring, her tresses, the devotion in her eyes—you do not paint them
+                through glass; you hold your breath and steady your gaze until the universe appears without a single
+                flaw."
+              </blockquote>
+              <cite>— Om Prakash Kumawat (Dainik Bhaskar Feature)</cite>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: THE 9 CLASSICAL SCHOOLS -->
+    <section class="schools-section" id="schools">
+      <div class="container">
+        <div class="section-header centered">
+          <span class="section-eyebrow">A Pan-Indian Mastery</span>
+          <h2 class="section-title">The Nine Classical Schools of <em>Miniature Art</em></h2>
+          <p class="section-lead">
+            While most contemporary painters remain tethered to a single provincial style, Master Om Prakash Kumawat is
+            revered across India for having mastered the distinct idioms, color palettes, and royal iconography of nine
+            classical schools:
+          </p>
+        </div>
+
+        <div class="schools-mosaic">
+          <div class="school-card">
+            <div>
+              <span class="school-num">SCHOOL 01</span>
+              <h3>Mewar</h3>
+              <p>Characterized by intense emotional vigor, deep lac-red borders, and vivid devotional depictions from
+                the Rasikapriya and Bhagavat Purana.</p>
+            </div>
+            <span class="school-tag">Bold Devotional Expression</span>
+          </div>
+
+          <div class="school-card">
+            <div>
+              <span class="school-num">SCHOOL 02</span>
+              <h3>Mughal</h3>
+              <p>Celebrated for photographic naturalism, intricate court durbars, botanical margins (*hashiya*), and
+                delicate psychological portraiture.</p>
+            </div>
+            <span class="school-tag">Imperial Realism &amp; Hashiya</span>
+          </div>
+
+          <div class="school-card">
+            <div>
+              <span class="school-num">SCHOOL 03</span>
+              <h3>Kangra (Pahari)</h3>
+              <p>The pinnacle of lyricism; undulating Himalayan hills, rhythmic verdant landscapes, and the eternal,
+                tender romance of Radha and Krishna.</p>
+            </div>
+            <span class="school-tag">Pahari Poetics &amp; Verdant Hills</span>
+          </div>
+
+          <div class="school-card">
+            <div>
+              <span class="school-num">SCHOOL 04</span>
+              <h3>Kota-Bundi</h3>
+              <p>Dramatic movement, turbulent monsoon skies, dense jungle hunts (*shikar*), and luxuriant architectural
+                pavilions draped in gold.</p>
+            </div>
+            <span class="school-tag">Dynamic Rhythm &amp; Monsoon Skies</span>
+          </div>
+
+          <div class="school-card">
+            <div>
+              <span class="school-num">SCHOOL 05</span>
+              <h3>Bikaner</h3>
+              <p>Refined delicacy influenced by Persian Usta artisans; gossamer draperies, ethereal cloud-bands, and
+                soft, understated mineral harmonies.</p>
+            </div>
+            <span class="school-tag">Persian Nuance &amp; Gossamer Veils</span>
+          </div>
+
+          <div class="school-card">
+            <div>
+              <span class="school-num">SCHOOL 06</span>
+              <h3>Punjab &amp; Sikh Court</h3>
+              <p>Regal historical narratives depicting Maharaja Ranjit Singh, martial grandeur, ornate armaments, and
+                the sacred ethos of the Khalsa.</p>
+            </div>
+            <span class="school-tag">Durbar Majesty &amp; Heritage</span>
+          </div>
+
+          <div class="school-card">
+            <div>
+              <span class="school-num">SCHOOL 07</span>
+              <h3>Deccan</h3>
+              <p>Mystical, sensuous compositions distinguished by luminous turquoise, opulent heavy gold, and rich
+                Sultanate Persian motifs.</p>
+            </div>
+            <span class="school-tag">Luminous Turquoise &amp; Mysticism</span>
+          </div>
+
+          <div class="school-card">
+            <div>
+              <span class="school-num">SCHOOL 08</span>
+              <h3>Jaipur (Dhundhar)</h3>
+              <p>The artist's home school; stately marble architecture, jeweled court gatherings, and pure symmetrical
+                elegance adorned in Hilkari.</p>
+            </div>
+            <span class="school-tag">Architectural Precision &amp; Symmetry</span>
+          </div>
+
+          <div class="school-card">
+            <div>
+              <span class="school-num">SCHOOL 09</span>
+              <h3>Alwar</h3>
+              <p>A delicate bridge between Jaipur courtliness and Mughal finesse, renowned for shaded modeling and
+                exquisitely ornate turbans.</p>
+            </div>
+            <span class="school-tag">Courtly Finesse &amp; Shaded Modeling</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: ALCHEMY OF THE CRAFT -->
+    <section class="alchemy-section" id="alchemy">
+      <div class="container">
+        <div class="section-header centered">
+          <span class="section-eyebrow" style="color: var(--gold-light);">Materials Untouched by Time</span>
+          <h2 class="section-title">The Sacred Alchemy: <em>From Earth to Eternity</em></h2>
+          <p class="section-lead">
+            In an era of synthetic acrylics and mass reproduction, Master Om Prakash Kumawat adheres unflinchingly to
+            the orthodox techniques practiced in royal karkhanas six centuries ago.
+          </p>
+        </div>
+
+        <div class="alchemy-grid">
+          <div class="alchemy-card">
+            <div class="alchemy-glyph">&#9672;</div>
+            <h3>Handmade Wasli Paper</h3>
+            <p>
+              Multiple layers of unbleached handmade sunn-hemp and cotton rag paper are fused together using a cooked
+              copper-sulfate wheat starch paste to prevent insect infestation. The surface is then hand-burnished for
+              days using an agate stone (*gholta*) until it acquires a porcelain-like ivory sheen.
+            </p>
+            <div class="alchemy-highlight">Agate-Burnished Archival Surface</div>
+          </div>
+
+          <div class="alchemy-card">
+            <div class="alchemy-glyph">&#10057;</div>
+            <h3>100% Mineral Pigments</h3>
+            <p>
+              Raw minerals extracted from the earth—lapis lazuli for royal blues, malachite for deep jade greens,
+              cinnabar (hinglu) for glowing vermilion, orpiment (hartal) for gold yellows, and riverbed white zinc—are
+              ground with mortar and pestle, levigated in water, and preserved in natural clam and conch shells.
+            </p>
+            <div class="alchemy-highlight">Ground in Natural Seashells</div>
+          </div>
+
+          <div class="alchemy-card">
+            <div class="alchemy-glyph">&#10022;</div>
+            <h3>Single-Hair Squirrel Brushes</h3>
+            <p>
+              No manufactured brush can produce lines with zero tolerance for error. The artist hand-crafts his own
+              brushes (*kalam*) using fine, non-shedding hairs harvested ethically from the tails of desert squirrels,
+              bound inside bird quills, tapering to a single micro-point finer than human hair.
+            </p>
+            <div class="alchemy-highlight">The Microscopic *Pardaz* Technique</div>
+          </div>
+
+          <div class="alchemy-card">
+            <div class="alchemy-glyph">&#9733;</div>
+            <h3>24K Hilkari Gold Detailing</h3>
+            <p>
+              Pure twenty-four-karat gold leaf is hand-rubbed with purified gum arabic and honey for days until it
+              dissolves into an impalpable liquid gold powder (*Hilkari*). Applied to royal armor, jewelry, and halos,
+              it is burnished with a heated agate needle to achieve a celestial, three-dimensional gleam.
+            </p>
+            <div class="alchemy-highlight">Pure 24-Karat Burnished Gold</div>
+          </div>
+        </div>
+
+        <!-- Spotlight: Seashell Palette & Studio Atmosphere -->
+        <div class="process-banner">
+          <div class="process-banner-img">
+            <img src="images/image5.jpeg"
+              alt="Shells holding natural stone pigments and miniature paintings on Wasli paper" loading="lazy">
+          </div>
+          <div class="process-banner-text">
+            <span class="section-eyebrow" style="color: var(--gold-light);">The Atelier Ritual</span>
+            <h3>Pigments That Never Fade Across Centuries</h3>
+            <p>
+              "Synthetic colors fade within decades," explains Om Prakash. "A natural stone pigment is millions of years
+              old before it touches the Wasli paper. When a collector acquires an artwork made with pure lapis lazuli
+              and genuine Hilkari gold, they are holding an artifact that will look as radiant five hundred years from
+              now as it does today."
+            </p>
+            <p>
+              Each shell on the master's table holds a living mineral story—ground slowly by hand, washed with
+              rainwater, and applied in thousands of breath-controlled dots (*dana*) and strokes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: THE ROYAL CANVAS (COLLECTIONS & PROVENANCE) -->
+    <section class="provenance-section" id="provenance">
+      <div class="container">
+        <div class="canvas-layout">
+          <div class="monumental-card">
+            <img src="images/image7.jpeg" alt="Monumental miniature painting of royal court durbar" loading="lazy">
+            <div class="monumental-meta">
+              <span class="monumental-badge">Monumental Masterpiece</span>
+              <h3 class="monumental-title">The Court of Maharaja Ranjit Singh</h3>
+              <p class="monumental-desc">
+                A landmark five-year historical magnum opus capturing the Lahore Durbar, intricate royal regalia,
+                diplomatic dialogues with the British, and exquisite *mohrkashi* architectural inlay. Acquired by an
+                international curator for <strong>₹1 Crore ($120,000+ USD)</strong>.
+              </p>
+            </div>
+          </div>
+
+          <div class="provenance-content">
+            <span class="section-eyebrow">National Provenance &amp; Curated Honors</span>
+            <h2 class="section-title">Enshrined in India’s <em>Highest Corridors</em> of Power</h2>
+            <p>
+              Om Prakash Kumawat’s works have transcended private gallery walls to occupy pride of place within India’s
+              national patrimony. His miniatures grace state collections where heads of state and global dignitaries
+              encounter the finest artistic expressions of the Indian subcontinent.
+            </p>
+
+            <div class="venues-list">
+              <div class="venue-card">
+                <div class="venue-icon">&#9813;</div>
+                <div>
+                  <h4>Rashtrapati Bhavan (Presidential Palace, New Delhi)</h4>
+                  <p>Permanent installation of classical Rajasthani miniature narratives within India’s supreme
+                    sovereign residence.</p>
+                </div>
+              </div>
+
+              <div class="venue-card">
+                <div class="venue-icon">&#9733;</div>
+                <div>
+                  <h4>Prime Minister’s Office (PMO, New Delhi)</h4>
+                  <p>Specially selected works representing India’s cultural heritage and living master traditions
+                    presented to foreign dignitaries.</p>
+                </div>
+              </div>
+
+              <div class="venue-card">
+                <div class="venue-icon">&#10022;</div>
+                <div>
+                  <h4>Delhi Vidhan Sabha &amp; Virasat-e-Khalsa</h4>
+                  <p>Monumental historical commissions honoring Sikh history, Punjab court narratives, and
+                    constitutional heritage.</p>
+                </div>
+              </div>
+
+              <div class="venue-card">
+                <div class="venue-icon">&#9670;</div>
+                <div>
+                  <h4>"The Breath of Lineage" Exhibition</h4>
+                  <p>Featured in the landmark museum exhibition curated by Padma Shri Vijay Sharma, celebrating India’s
+                    most authentic living miniature lineages.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: KEEPING THE FLAME ALIVE (MENTORSHIP & LEGACY) -->
+    <section class="legacy-section" id="mentorship">
+      <div class="container">
+        <div class="legacy-grid">
+          <div class="legacy-narrative">
+            <span class="section-eyebrow">Preserving a Sacred Heritage</span>
+            <h2 class="section-title">Keeping the <em>Flame Alive</em>: Mentorship &amp; Education</h2>
+            <p>
+              For Master Om Prakash, mastery is not a solitary pinnacle—it is a responsibility to future centuries. As
+              commercial shortcuts threaten to extinguish the painstaking knowledge of stone grinding and single-hair
+              brushwork, he has dedicated himself to training the next generation of classical artists.
+            </p>
+            <p>
+              Alongside his daughter and protégé, talented artist <strong>Priyanka Kumawat</strong>, he co-founded
+              <strong>odsoma.llp</strong> and leads international masterclasses and intensive experiential workshops.
+              Here, art students, scholars, and serious collectors are initiated into the meditative stillness of Wasli
+              burnishing and mineral alchemy.
+            </p>
+
+            <div class="legacy-pillars">
+              <div class="pillar-box">
+                <h4>Atelier Apprenticeships</h4>
+                <p>Immersive, one-on-one traditional training in Jaipur, preserving the unbroken oral and technical
+                  lineage of Guru-Shishya.</p>
+              </div>
+              <div class="pillar-box">
+                <h4>Masterclasses &amp; Experiential Guilds</h4>
+                <p>Comprehensive institutional workshops across premier art foundations, such as the AIM Gallery "Indian
+                  Miniature School of Art Experiential".</p>
+              </div>
+              <div class="pillar-box">
+                <h4>Ethical Documentation</h4>
+                <p>Archiving ancient recipes for organic binding media, gum arabic purification, and stone levigation
+                  for posterity.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="legacy-gallery">
+            <div class="legacy-img-frame span-two">
+              <img src="images/image1.jpeg" alt="The traditional studio sanctuary of Om Prakash Kumawat in Jaipur"
+                loading="lazy">
+            </div>
+            <div class="legacy-img-frame">
+              <img src="images/image4.jpeg" alt="Courtly miniature painting crafted in the studio" loading="lazy">
+            </div>
+            <div class="legacy-img-frame">
+              <img src="images/image6.jpeg" alt="Work in progress painting by master and apprentices" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CLOSING & INVITATION (CALL TO ACTION) -->
+    <section class="cta-sanctuary" id="inquire">
+      <div class="cta-crest" aria-hidden="true">&#10022;</div>
+      <span class="section-eyebrow" style="color: var(--gold-light);">Patronage &amp; Commissions</span>
+      <h2>Enter the Sanctuary of <em>Timeless Art</em></h2>
+      <p>
+        Whether you are seeking to commission a museum-grade heirloom, acquire a curated miniature for a private
+        collection, or enroll in an exclusive masterclass, we invite you to begin your journey into India's living royal
+        heritage.
+      </p>
+
+      <div class="cta-actions">
+        <a href="index.html#collection" class="btn-gold">
+          Explore Current Collection &rarr;
+        </a>
+        <a href="mailto:contact@omprakashkumawat.com?subject=Commission%20Inquiry%20-%20Master%20Om%20Prakash%20Kumawat"
+          class="btn-outline">
+          Inquire for Bespoke Commission
+        </a>
+        <a href="#hero" class="btn-outline" style="border-color: var(--gold); color: var(--gold-light);">
+          Join Next Masterclass
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- MASTER FOOTER -->
+  <footer class="master-footer">
+    <div class="footer-top">
+      <div class="footer-col">
+        <div class="brand" style="margin-bottom: 1.2rem;">
+          <span class="brand-crest" aria-hidden="true">O</span>
+          <div class="brand-title" style="color: #fff;">OM <span>&amp;</span> PRIYANKA</div>
+        </div>
+        <p style="color: #7A8D83; max-width: 420px; font-size: 0.92rem; line-height: 1.7;">
+          Atelier of Senior Artist Om Prakash Kumawat &bull; Dedicated to the timeless preservation, classical alchemy,
+          and museum-grade mastery of Indian Miniature Painting.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Classical Schools</h4>
+        <ul class="footer-links">
+          <li><a href="#schools">Mewar &amp; Bundi Schools</a></li>
+          <li><a href="#schools">Kangra Pahari Poetics</a></li>
+          <li><a href="#schools">Mughal Imperial Realism</a></li>
+          <li><a href="#schools">Sikh &amp; Punjab Durbar</a></li>
+          <li><a href="#schools">Jaipur &amp; Alwar Court Styles</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Provenance &amp; Studio</h4>
+        <ul class="footer-links">
+          <li><a href="#provenance">Rashtrapati Bhavan Collection</a></li>
+          <li><a href="#provenance">Prime Minister's Office (PMO)</a></li>
+          <li><a href="#alchemy">Natural Stone &amp; Hilkari Process</a></li>
+          <li><a href="#mentorship">odsoma.llp &amp; Masterclasses</a></li>
+          <li><a href="index.html">Main Gallery Home</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Om Prakash Kumawat &amp; Priyanka Kumawat. All rights reserved. Indian Miniature Heritage.</p>
+      <p>Hand-painted on Wasli paper with natural stone pigments &amp; 24K gold.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
