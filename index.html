@@ -2,1315 +2,1134 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f2e9">
-  <meta name="description" content="Discover Indian miniature paintings by senior artist Om Prakash Kumawat and artist Priyanka Kumawat. Explore India's art heritage for collectors, galleries and international buyers.">
-  <title>OM &amp; PRIYANKA — Indian Miniature Art &amp; Heritage</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --paper: #f5f2e9;
-      --paper-deep: #ebe6d8;
-      --ink: #25352d;
-      --ink-soft: #526057;
-      --rust: #a85f45;
-      --gold: #b89b64;
-      --line: rgba(37, 53, 45, .18);
-      --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
-      --page-gutter: clamp(1.25rem, 6.5vw, 7rem);
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 6rem;
-    }
-
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--sans);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body:has(.lightbox[open]) {
-      overflow: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      color: inherit;
-      font: inherit;
-    }
-
-    button:focus-visible,
-    a:focus-visible {
-      outline: 2px solid var(--rust);
-      outline-offset: 5px;
-    }
-
-    .announcement {
-      padding: .65rem 1rem;
-      background: var(--ink);
-      color: var(--paper);
-      font-size: .62rem;
-      letter-spacing: .19em;
-      text-align: center;
-      text-transform: uppercase;
-    }
-
-    .site-header {
-      position: sticky;
-      z-index: 10;
-      top: 0;
-      display: flex;
-      min-height: 5.25rem;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 var(--page-gutter);
-      border-bottom: 1px solid var(--line);
-      background: rgb(245 242 233 / 94%);
-      backdrop-filter: blur(14px);
-    }
-
-    .wordmark {
-      display: inline-flex;
-      align-items: center;
-      gap: .7rem;
-      font-family: var(--serif);
-      font-size: 1.11rem;
-      letter-spacing: .08em;
-      white-space: nowrap;
-    }
-
-    .wordmark-mark {
-      display: grid;
-      width: 2.15rem;
-      height: 2.15rem;
-      place-items: center;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      color: var(--rust);
-      font-size: .83rem;
-      font-style: italic;
-      letter-spacing: 0;
-    }
-
-    .wordmark amp {
-      color: var(--rust);
-      font-style: italic;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: clamp(1.25rem, 3vw, 3.1rem);
-    }
-
-    .nav-links a {
-      position: relative;
-      padding: .5rem 0;
-      color: var(--ink-soft);
-      font-size: .68rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      transition: color .25s ease;
-    }
-
-    .nav-links a::after {
-      position: absolute;
-      right: 0;
-      bottom: .18rem;
-      left: 0;
-      height: 1px;
-      background: var(--rust);
-      content: "";
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform .3s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--rust);
-    }
-
-    .nav-links a:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-
-    .menu-toggle {
-      display: none;
-      width: 2.75rem;
-      height: 2.75rem;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      background: transparent;
-      cursor: pointer;
-    }
-
-    .menu-toggle svg {
-      width: 1.15rem;
-      height: 1.15rem;
-    }
-
-    .hero {
-      display: grid;
-      min-height: min(47rem, calc(100svh - 7rem));
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: clamp(2rem, 6vw, 6.25rem);
-      padding: clamp(3.5rem, 8vw, 7.5rem) var(--page-gutter);
-    }
-
-    .hero-copy {
-      position: relative;
-      z-index: 1;
-      max-width: 35rem;
-      animation: rise-in .9s .1s both;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: .75rem;
-      color: var(--rust);
-      font-size: .65rem;
-      font-weight: 600;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      width: 2rem;
-      height: 1px;
-      background: currentColor;
-      content: "";
-    }
-
-    h1,
-    h2,
-    h3,
-    p {
-      margin-top: 0;
-    }
-
-    .hero h1 {
-      max-width: 10ch;
-      margin: 1.45rem 0 1.2rem;
-      font-family: var(--serif);
-      font-size: clamp(3.6rem, 7.2vw, 7.4rem);
-      font-weight: 400;
-      letter-spacing: -.065em;
-      line-height: .95;
-    }
-
-    .hero h1 em {
-      color: var(--rust);
-      font-weight: 400;
-    }
-
-    .hero-description {
-      max-width: 26rem;
-      margin-bottom: 2rem;
-      color: var(--ink-soft);
-      font-family: var(--serif);
-      font-size: clamp(1.05rem, 1.5vw, 1.25rem);
-      line-height: 1.8;
-    }
-
-    .text-link {
-      display: inline-flex;
-      min-height: 3.2rem;
-      align-items: center;
-      gap: 1.5rem;
-      border-bottom: 1px solid var(--ink);
-      font-size: .68rem;
-      font-weight: 600;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      transition: gap .25s ease, color .25s ease, border-color .25s ease;
-    }
-
-    .text-link:hover {
-      gap: 2rem;
-      border-color: var(--rust);
-      color: var(--rust);
-    }
-
-    .text-link svg {
-      width: 1rem;
-      height: 1rem;
-    }
-
-    .hero-art {
-      position: relative;
-      width: 100%;
-      max-width: 38rem;
-      justify-self: end;
-      animation: image-in 1.1s .18s both;
-    }
-
-    .hero-frame {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 1.12 / 1;
-      padding: .8rem;
-      background: #e8dfcb;
-      box-shadow: 0 1.5rem 4.5rem rgb(37 53 45 / 13%);
-      transform: rotate(1.2deg);
-      transition: transform .6s cubic-bezier(.2, .75, .3, 1);
-    }
-
-    .hero-art:hover .hero-frame {
-      transform: rotate(0);
-    }
-
-    .hero-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 54%;
-    }
-
-    .hero-frame::after {
-      position: absolute;
-      inset: .8rem;
-      border: 1px solid rgb(245 242 233 / 45%);
-      content: "";
-      pointer-events: none;
-    }
-
-    .hero-caption {
-      position: absolute;
-      right: -1.1rem;
-      bottom: 1.1rem;
-      z-index: 1;
-      padding: 1rem 1.25rem;
-      background: var(--paper);
-      box-shadow: 0 .5rem 2rem rgb(37 53 45 / 10%);
-      font-family: var(--serif);
-      font-size: .9rem;
-      font-style: italic;
-    }
-
-    .hero-stamp {
-      position: absolute;
-      top: -1.4rem;
-      right: -.9rem;
-      display: grid;
-      width: 5.5rem;
-      height: 5.5rem;
-      place-items: center;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      background: var(--paper);
-      color: var(--rust);
-      font-family: var(--serif);
-      font-size: .76rem;
-      line-height: 1.45;
-      text-align: center;
-      animation: turn 28s linear infinite;
-    }
-
-    .section {
-      padding: clamp(5rem, 10vw, 9rem) var(--page-gutter);
-    }
-
-    .section-heading {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .section-heading h2 {
-      max-width: 13ch;
-      margin: .8rem 0 0;
-      font-family: var(--serif);
-      font-size: clamp(2.8rem, 5.5vw, 5rem);
-      font-weight: 400;
-      letter-spacing: -.055em;
-      line-height: 1;
-    }
-
-    .section-note {
-      max-width: 19rem;
-      margin: 0 0 .35rem;
-      color: var(--ink-soft);
-      font-family: var(--serif);
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    .collection {
-      background: var(--paper-deep);
-    }
-
-    .filter-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .55rem;
-      margin: 0 0 2.5rem;
-      padding: 0;
-      list-style: none;
-    }
-
-    .filter-button {
-      padding: .7rem 1.15rem;
-      border: 1px solid var(--line);
-      border-radius: 99px;
-      background: transparent;
-      color: var(--ink-soft);
-      cursor: pointer;
-      font-size: .62rem;
-      letter-spacing: .11em;
-      text-transform: uppercase;
-      transition: background .25s ease, border-color .25s ease, color .25s ease, transform .25s ease;
-    }
-
-    .filter-button:hover {
-      transform: translateY(-2px);
-    }
-
-    .filter-button[aria-pressed="true"],
-    .filter-button:hover {
-      border-color: var(--ink);
-      background: var(--ink);
-      color: var(--paper);
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: clamp(1.2rem, 3vw, 2.7rem);
-      align-items: start;
-    }
-
-    .artwork {
-      grid-column: span 4;
-      min-width: 0;
-      transition: opacity .3s ease, transform .35s ease;
-    }
-
-    .artwork:nth-child(3n + 2) {
-      margin-top: 3.4rem;
-    }
-
-    .artwork:nth-child(3n) {
-      margin-top: 1.6rem;
-    }
-
-    .artwork[hidden] {
-      display: none;
-    }
-
-    .artwork-image {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      padding: 0;
-      border: 0;
-      background: #ded7c9;
-      cursor: zoom-in;
-      text-align: left;
-    }
-
-    .artwork-image img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4 / 4.8;
-      object-fit: cover;
-      transition: transform .8s cubic-bezier(.2, .75, .3, 1), filter .5s ease;
-    }
-
-    .artwork:nth-child(2) .artwork-image img {
-      object-position: 51% center;
-    }
-
-    .artwork:nth-child(3) .artwork-image img {
-      aspect-ratio: 4 / 4.25;
-    }
-
-    .artwork-image::after {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(transparent 68%, rgb(20 28 23 / 28%));
-      content: "";
-      opacity: 0;
-      transition: opacity .35s ease;
-    }
-
-    .artwork-image:hover img {
-      filter: saturate(1.08);
-      transform: scale(1.045);
-    }
-
-    .artwork-image:hover::after {
-      opacity: 1;
-    }
-
-    .artwork-image:focus-visible {
-      outline-offset: 4px;
-    }
-
-    .zoom-hint {
-      position: absolute;
-      right: 1rem;
-      bottom: 1rem;
-      z-index: 1;
-      color: white;
-      font-size: .62rem;
-      letter-spacing: .12em;
-      opacity: 0;
-      text-transform: uppercase;
-      transition: opacity .35s ease;
-    }
-
-    .artwork-image:hover .zoom-hint,
-    .artwork-image:focus-visible .zoom-hint {
-      opacity: 1;
-    }
-
-    .artwork-caption {
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1rem .1rem 0;
-    }
-
-    .artwork-caption h3 {
-      margin-bottom: .35rem;
-      font-family: var(--serif);
-      font-size: 1.2rem;
-      font-weight: 400;
-    }
-
-    .artwork-caption p,
-    .artwork-index {
-      margin: 0;
-      color: var(--ink-soft);
-      font-size: .62rem;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-
-    .artwork-index {
-      padding-top: .25rem;
-      color: var(--rust);
-    }
-
-    .interlude {
-      display: grid;
-      min-height: 25rem;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: clamp(2.5rem, 8vw, 8rem);
-      padding: clamp(4rem, 8vw, 7rem) var(--page-gutter);
-      background: var(--ink);
-      color: var(--paper);
-    }
-
-    .interlude-image {
-      position: relative;
-      max-width: 33rem;
-      justify-self: center;
-    }
-
-    .interlude-image::before {
-      position: absolute;
-      inset: -1rem 1rem 1rem -1rem;
-      border: 1px solid rgb(184 155 100 / 65%);
-      content: "";
-    }
-
-    .interlude-image img {
-      position: relative;
-      display: block;
-      width: 100%;
-      max-height: 29rem;
-      aspect-ratio: 1 / 1.05;
-      object-fit: cover;
-    }
-
-    .interlude-copy {
-      max-width: 34rem;
-    }
-
-    .interlude-copy .eyebrow {
-      color: #d5bd8f;
-    }
-
-    .interlude-copy h2 {
-      margin: 1.2rem 0;
-      font-family: var(--serif);
-      font-size: clamp(2.7rem, 5vw, 5rem);
-      font-weight: 400;
-      letter-spacing: -.055em;
-      line-height: 1;
-    }
-
-    .interlude-copy p {
-      max-width: 29rem;
-      margin-bottom: 1.2rem;
-      color: rgb(245 242 233 / 75%);
-      font-family: var(--serif);
-      font-size: 1.08rem;
-      line-height: 1.85;
-    }
-
-    .interlude-copy .text-link {
-      margin-top: .5rem;
-      border-color: rgb(245 242 233 / 60%);
-    }
-
-    .interlude-copy .text-link:hover {
-      border-color: #d5bd8f;
-      color: #d5bd8f;
-    }
-
-    .studio {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      align-items: center;
-      gap: clamp(2.5rem, 8vw, 8rem);
-      background: #eeeadf;
-    }
-
-    .studio-copy {
-      max-width: 31rem;
-    }
-
-    .studio-copy h2 {
-      margin: 1rem 0 1.35rem;
-      font-family: var(--serif);
-      font-size: clamp(2.8rem, 5.2vw, 5rem);
-      font-weight: 400;
-      letter-spacing: -.06em;
-      line-height: 1;
-    }
-
-    .studio-copy p {
-      color: var(--ink-soft);
-      font-family: var(--serif);
-      font-size: 1.08rem;
-      line-height: 1.85;
-    }
-
-    .studio-photo {
-      position: relative;
-      justify-self: stretch;
-    }
-
-    .studio-photo img {
-      display: block;
-      width: 100%;
-      max-height: 32rem;
-      aspect-ratio: 1.25 / 1;
-      object-fit: cover;
-    }
-
-    .studio-photo figcaption {
-      position: absolute;
-      right: -1rem;
-      bottom: -1rem;
-      padding: .85rem 1.2rem;
-      background: var(--paper);
-      font-family: var(--serif);
-      font-size: .85rem;
-      font-style: italic;
-    }
-
-    .closing {
-      padding: clamp(5rem, 10vw, 9rem) var(--page-gutter);
-      text-align: center;
-    }
-
-    .closing-mark {
-      display: grid;
-      width: 3.5rem;
-      height: 3.5rem;
-      margin: 0 auto 1.8rem;
-      place-items: center;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      color: var(--rust);
-      font-family: var(--serif);
-      font-size: 1.35rem;
-      font-style: italic;
-    }
-
-    .closing h2 {
-      margin: .9rem 0 1rem;
-      font-family: var(--serif);
-      font-size: clamp(2.7rem, 6vw, 5.5rem);
-      font-weight: 400;
-      letter-spacing: -.055em;
-      line-height: 1;
-    }
-
-    .closing > p:last-of-type {
-      max-width: 32rem;
-      margin: 0 auto 1.5rem;
-      color: var(--ink-soft);
-      font-family: var(--serif);
-      font-size: 1.05rem;
-      line-height: 1.8;
-    }
-
-    .site-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      padding: 1.6rem var(--page-gutter);
-      border-top: 1px solid var(--line);
-      color: var(--ink-soft);
-      font-size: .63rem;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-
-    .site-footer p {
-      margin: 0;
-    }
-
-    .footer-brand {
-      color: var(--ink);
-      font-family: var(--serif);
-      font-size: .93rem;
-      letter-spacing: .08em;
-    }
-
-    .lightbox {
-      width: min(92vw, 70rem);
-      max-width: none;
-      max-height: 92svh;
-      padding: 0;
-      overflow: visible;
-      border: 1px solid rgb(245 242 233 / 25%);
-      background: #171e19;
-      color: white;
-    }
-
-    .lightbox::backdrop {
-      background: rgb(18 24 20 / 88%);
-      backdrop-filter: blur(8px);
-    }
-
-    .lightbox-inner {
-      position: relative;
-      display: grid;
-      min-height: 12rem;
-      place-items: center;
-    }
-
-    .lightbox img {
-      display: block;
-      max-width: 100%;
-      max-height: 82svh;
-      object-fit: contain;
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: .8rem;
-      right: .8rem;
-      display: grid;
-      width: 2.65rem;
-      height: 2.65rem;
-      place-items: center;
-      border: 1px solid rgb(255 255 255 / 55%);
-      border-radius: 50%;
-      background: rgb(18 24 20 / 68%);
-      color: white;
-      cursor: pointer;
-      font-size: 1.3rem;
-      line-height: 1;
-      transition: background .2s ease, transform .2s ease;
-    }
-
-    .lightbox-close:hover {
-      background: var(--rust);
-      transform: rotate(90deg);
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .7s ease, transform .7s cubic-bezier(.2, .75, .3, 1);
-    }
-
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes rise-in {
-      from { opacity: 0; transform: translateY(1.3rem); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes image-in {
-      from { opacity: 0; transform: translateY(1.2rem) scale(.98); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
-    @keyframes turn {
-      to { transform: rotate(360deg); }
-    }
-
-    @media (min-width: 1500px) {
-      :root {
-        --page-gutter: max(7rem, calc((100vw - 1320px) / 2));
-      }
-    }
-
-    @media (max-width: 800px) {
-      .hero {
-        min-height: auto;
-        gap: 2.5rem;
-      }
-
-      .hero h1 {
-        font-size: clamp(3.5rem, 9vw, 5.7rem);
-      }
-
-      .hero-caption {
-        right: -.6rem;
-      }
-
-      .artwork {
-        grid-column: span 6;
-      }
-
-      .artwork:nth-child(3n + 2),
-      .artwork:nth-child(3n) {
-        margin-top: 0;
-      }
-
-      .artwork:nth-child(even) {
-        margin-top: 2.5rem;
-      }
-
-      .interlude,
-      .studio {
-        gap: 3rem;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .announcement {
-        font-size: .54rem;
-        letter-spacing: .12em;
-      }
-
-      .site-header {
-        min-height: 4.5rem;
-      }
-
-      .wordmark {
-        gap: .5rem;
-        font-size: .99rem;
-      }
-
-      .wordmark-mark {
-        width: 1.9rem;
-        height: 1.9rem;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-
-      .nav-links {
-        position: absolute;
-        top: calc(100% - 1px);
-        right: 0;
-        left: 0;
-        display: flex;
-        align-items: stretch;
-        flex-direction: column;
-        gap: 0;
-        padding: 0 var(--page-gutter);
-        overflow: hidden;
-        border-bottom: 1px solid transparent;
-        background: var(--paper);
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(-.5rem);
-        transition: opacity .25s ease, transform .25s ease, border-color .25s ease;
-      }
-
-      .nav-links.is-open {
-        padding-top: .5rem;
-        padding-bottom: .75rem;
-        border-color: var(--line);
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
-      }
-
-      .nav-links a {
-        padding: 1rem 0;
-        border-top: 1px solid var(--line);
-      }
-
-      .nav-links a::after {
-        display: none;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 2.6rem;
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-      }
-
-      .hero-copy {
-        max-width: 31rem;
-      }
-
-      .hero h1 {
-        max-width: 9ch;
-        font-size: clamp(4rem, 15vw, 6.2rem);
-      }
-
-      .hero-art {
-        width: calc(100% - .5rem);
-        max-width: 32rem;
-        margin-right: .3rem;
-      }
-
-      .hero-frame {
-        aspect-ratio: 1.08 / 1;
-        padding: .55rem;
-      }
-
-      .hero-frame::after {
-        inset: .55rem;
-      }
-
-      .hero-caption {
-        right: -.3rem;
-        bottom: .5rem;
-        padding: .8rem .95rem;
-        font-size: .78rem;
-      }
-
-      .hero-stamp {
-        top: -1.2rem;
-        right: -.55rem;
-        width: 4.7rem;
-        height: 4.7rem;
-        font-size: .68rem;
-      }
-
-      .section-heading {
-        align-items: start;
-        flex-direction: column;
-        gap: 1rem;
-        margin-bottom: 2rem;
-      }
-
-      .section-heading h2 {
-        font-size: clamp(3rem, 12vw, 4rem);
-      }
-
-      .section-note {
-        max-width: 23rem;
-      }
-
-      .section {
-        padding-top: 4.5rem;
-        padding-bottom: 4.5rem;
-      }
-
-      .filter-list {
-        gap: .4rem;
-        margin-bottom: 1.7rem;
-      }
-
-      .filter-button {
-        padding: .62rem .85rem;
-        font-size: .56rem;
-      }
-
-      .gallery {
-        gap: 1.8rem .85rem;
-      }
-
-      .artwork {
-        grid-column: span 6;
-      }
-
-      .artwork:nth-child(even) {
-        margin-top: 1.5rem;
-      }
-
-      .artwork-image img {
-        aspect-ratio: 4 / 5;
-      }
-
-      .artwork-caption {
-        gap: .4rem;
-        padding-top: .7rem;
-      }
-
-      .artwork-caption h3 {
-        font-size: 1rem;
-      }
-
-      .artwork-caption p,
-      .artwork-index {
-        font-size: .53rem;
-        letter-spacing: .08em;
-      }
-
-      .interlude,
-      .studio {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-      }
-
-      .interlude {
-        padding-top: 4.5rem;
-        padding-bottom: 4.5rem;
-      }
-
-      .interlude-image {
-        width: calc(100% - 1rem);
-      }
-
-      .interlude-image img {
-        max-height: 25rem;
-      }
-
-      .interlude-copy h2,
-      .studio-copy h2 {
-        font-size: clamp(3rem, 12vw, 4.2rem);
-      }
-
-      .studio-photo figcaption {
-        right: -.45rem;
-        bottom: -.65rem;
-      }
-
-      .closing {
-        padding-top: 5rem;
-        padding-bottom: 5rem;
-      }
-
-      .site-footer {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: .7rem;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#151c17">
+  <title>OM &amp; PRIYANKA — Royal Indian Miniature Art Atelier | Master Om Prakash Kumawat</title>
+  <meta name="description" content="Discover exquisite Indian miniature paintings by Senior Artist Om Prakash Kumawat and Artist Priyanka Kumawat. Preserving Mughal, Rajasthani, Pahari & Deccani royal schools on antique Wasli paper with 24K pure gold.">
+  
+  <!-- Preconnect & Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="navbar.css">
 </head>
 <body>
-  <div class="announcement">Hand-painted with patience, made to be treasured</div>
 
-  <header class="site-header">
-    <a class="wordmark" href="index.html" aria-label="OM and Priyanka home">
-      <span class="wordmark-mark" aria-hidden="true">O</span>
-      <span>OM <amp>&amp;</amp> PRIYANKA</span>
-    </a>
-    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-        <path d="M4 8h16M4 16h16"></path>
-      </svg>
-    </button>
-    <nav class="nav-links" id="primary-navigation" aria-label="Main navigation">
-      <a href="#collection">The collection</a>
-      <a href="story.html">Our story</a>
-      <a href="#studio">The studio</a>
-    </nav>
+  <!-- =========================================================================
+       1. TOP CURATOR ANNOUNCEMENT BAR (Exact Reference: Dark bar with star bullets)
+       ========================================================================= -->
+  <div class="top-curator-bar" role="region" aria-label="Announcement">
+    <div class="top-bar-inner">
+      <div class="top-bar-left">
+        <span>Timeless Art</span>
+        <span class="star-bullet">✦</span>
+        <span>Rooted in Tradition</span>
+        <span class="star-bullet">✦</span>
+        <span>Crafted for Generations</span>
+      </div>
+      <div class="top-bar-right">
+        <span class="top-bar-shipping">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="1" y="3" width="15" height="13" rx="1"></rect>
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+          </svg>
+          Worldwide Shipping
+        </span>
+        <span class="top-bar-separator">|</span>
+        <a href="story.html">Our Story</a>
+        <a href="contact.html">Contact</a>
+        <span class="top-bar-separator">|</span>
+        <div class="currency-lang-wrap">
+          <label for="currency-selector" class="visually-hidden" style="display:none;">Currency</label>
+          <select id="currency-selector" class="currency-dropdown-select" aria-label="Select currency">
+            <option value="INR" selected>INR (₹)</option>
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       2. STICKY HEADER & NAVBAR (Exact Reference Logo, Nav Links & Icons)
+       ========================================================================= -->
+  <header class="site-header" id="master-header">
+    <div class="site-header-inner">
+      <!-- Royal Intertwined OP Monogram Logo -->
+      <a href="index.html" class="site-brand" aria-label="OM & PRIYANKA Home">
+        <div class="brand-emblem-wrap">
+          <svg class="brand-emblem-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Outer delicate rings -->
+            <circle cx="50" cy="50" r="46" stroke="#c5a059" stroke-width="1.2" stroke-opacity="0.45" stroke-dasharray="2 2" />
+            <circle cx="50" cy="50" r="42" stroke="#c5a059" stroke-width="0.8" stroke-opacity="0.75" />
+            <!-- Starbursts -->
+            <path d="M50 4 Q50 8 48 9 Q50 10 50 14 Q50 10 52 9 Q50 8 50 4Z" fill="#c5a059" />
+            <path d="M50 86 Q50 90 48 91 Q50 92 50 96 Q50 92 52 91 Q50 90 50 86Z" fill="#c5a059" />
+            <path d="M14 45 Q17 48 18 50 Q17 52 14 55 Q16 52 18 50 Q16 48 14 45Z" fill="#c5a059" />
+            <path d="M86 45 Q83 48 82 50 Q83 52 86 55 Q84 52 82 50 Q84 48 86 45Z" fill="#c5a059" />
+            <!-- Ornate OP Monogram -->
+            <path d="M48 20 C32 20 23 32 23 50 C23 68 32 80 48 80 C64 80 73 68 73 50 C73 32 64 20 48 20 Z M48 24.5 C60.5 24.5 67 34.5 67 50 C67 65.5 60.5 75.5 48 75.5 C35.5 75.5 29 65.5 29 50 C29 34.5 35.5 24.5 48 24.5 Z" fill="#b89b64" />
+            <path d="M38 28 H58 C68 28 74 34 74 43 C74 52 67 58 57 58 H46 V72 H49 C50.5 72 52 73 52 74.5 C52 76 50.5 77 49 77 H35 C33.5 77 32 76 32 74.5 C32 73 33.5 72 35 72 H38 V33 H35 C33.5 33 32 32 32 30.5 C32 29 33.5 28 35 28 Z M46 33 V53 H56 C63 53 67.5 49 67.5 43 C67.5 37 63 33 56 33 Z" fill="#8f723c" />
+          </svg>
+        </div>
+        <div class="brand-title-wrap">
+          <span class="brand-name">OM <span class="amp">&amp;</span> PRIYANKA</span>
+          <span class="brand-subline">MINIATURE ART</span>
+        </div>
+      </a>
+
+      <!-- Primary Navigation Links (All 8 Core Sections) -->
+      <nav class="primary-nav" aria-label="Main atelier navigation">
+        <!-- 1. Home (Active with gold underline) -->
+        <li class="nav-item is-current-page">
+          <a href="index.html" class="nav-link active">Home</a>
+        </li>
+
+        <!-- 2. Art & Traditions (Exact dropdown from reference Image 1) -->
+        <li class="nav-item has-dropdown">
+          <a href="art-traditions.html" class="nav-link">
+            Art &amp; Traditions
+            <svg class="nav-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <!-- Popover matching reference image 1 exactly -->
+          <div class="dropdown-popover art-forms-dropdown">
+            <div class="dropdown-caret"></div>
+            <div class="dropdown-content-grid">
+              <!-- Left: Classical Schools -->
+              <div class="dropdown-schools-list">
+                <a href="art-traditions.html#rajasthani" class="dropdown-school-link active" data-school="rajasthani">
+                  <span>Rajasthani</span>
+                  <svg class="item-arrow" viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <a href="art-traditions.html#mughal" class="dropdown-school-link" data-school="mughal">
+                  <span>Mughal</span>
+                  <svg class="item-arrow" viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <a href="art-traditions.html#pahari" class="dropdown-school-link" data-school="pahari">
+                  <span>Pahari</span>
+                  <svg class="item-arrow" viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <a href="art-traditions.html#deccani" class="dropdown-school-link" data-school="deccani">
+                  <span>Deccani</span>
+                  <svg class="item-arrow" viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <a href="art-traditions.html#sikh" class="dropdown-school-link" data-school="sikh">
+                  <span>Sikh</span>
+                  <svg class="item-arrow" viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <a href="art-traditions.html#malwa" class="dropdown-school-link" data-school="malwa">
+                  <span>Malwa</span>
+                  <svg class="item-arrow" viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="art-traditions.html" class="dropdown-school-link highlight" data-school="all">
+                  <span>All Art Forms</span>
+                  <svg class="item-arrow" viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+
+              <!-- Right: Interactive Feature Card (Queen holding Lotus) -->
+              <div class="dropdown-feature-card">
+                <div class="dropdown-img-wrap">
+                  <img id="dropdown-preview-img" src="images/dropdown_art.jpg" alt="Princess with Lotus Indian Miniature Painting" loading="eager">
+                </div>
+                <p id="dropdown-preview-quote" class="dropdown-quote">
+                  "Each style tells a different story, all rooted in India’s rich artistic heritage."
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- 3. Our Collections -->
+        <li class="nav-item has-dropdown">
+          <a href="collections.html" class="nav-link">
+            Our Collections
+            <svg class="nav-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <div class="dropdown-popover mega-dropdown-panel">
+            <div class="dropdown-caret"></div>
+            <div class="mega-grid-2col">
+              <div class="mega-col">
+                <h4>Heirloom Themes</h4>
+                <div class="mega-col-links">
+                  <a href="collections.html?filter=religious" class="mega-item-link">
+                    <span class="mega-item-icon">◈</span>
+                    <div class="mega-item-info">
+                      <h5>Religious &amp; Mythological</h5>
+                      <p>Sacred epics, Radha-Krishna &amp; Pichwai heritage</p>
+                    </div>
+                  </a>
+                  <a href="collections.html?filter=portraits" class="mega-item-link">
+                    <span class="mega-item-icon">◈</span>
+                    <div class="mega-item-info">
+                      <h5>Royal Portraits &amp; Durbars</h5>
+                      <p>Maharajas, queens and imperial durbar pageantry</p>
+                    </div>
+                  </a>
+                  <a href="collections.html?filter=historical" class="mega-item-link">
+                    <span class="mega-item-icon">◈</span>
+                    <div class="mega-item-info">
+                      <h5>Historical Chronicles</h5>
+                      <p>Ancient battlefields, hunts &amp; palace architecture</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="mega-col">
+                <h4>Master Folios</h4>
+                <div class="mega-col-links">
+                  <a href="collections.html?filter=gold" class="mega-item-link">
+                    <span class="mega-item-icon">✦</span>
+                    <div class="mega-item-info">
+                      <h5>24K Hilkari Gold Series</h5>
+                      <p>Pure gold illumination on antique handmade Wasli</p>
+                    </div>
+                  </a>
+                  <a href="collections.html" class="mega-item-link">
+                    <span class="mega-item-icon">✦</span>
+                    <div class="mega-item-info">
+                      <h5>View All Masterpieces &rarr;</h5>
+                      <p>Explore over 500+ curated classical works</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- 4. Our Story -->
+        <li class="nav-item">
+          <a href="story.html" class="nav-link">Our Story</a>
+        </li>
+
+        <!-- 5. Achievements -->
+        <li class="nav-item">
+          <a href="achievements.html" class="nav-link">Achievements</a>
+        </li>
+
+        <!-- 6. Workshops & Classes -->
+        <li class="nav-item">
+          <a href="workshops.html" class="nav-link">Workshops &amp; Classes</a>
+        </li>
+
+        <!-- 7. Shop / Enquire -->
+        <li class="nav-item">
+          <a href="shop.html" class="nav-link">Shop / Enquire</a>
+        </li>
+
+        <!-- 8. Contact Us -->
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">Contact Us</a>
+        </li>
+      </nav>
+
+      <!-- Right Header Actions (Search 🔍, Profile 👤, Bag 🛍️ with badge 0, Mobile toggle) -->
+      <div class="header-actions">
+        <!-- Search Trigger -->
+        <button type="button" class="nav-icon-btn" data-action="open-search-modal" aria-label="Search artworks">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- User Profile Trigger -->
+        <button type="button" class="nav-icon-btn" data-action="open-user-modal" aria-label="Collector profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+
+        <!-- Collector Bag (Cart) Trigger with Badge '0' -->
+        <button type="button" class="nav-icon-btn" data-action="toggle-bag" aria-label="View collector bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="bag-counter-badge" id="header-bag-count">2</span>
+        </button>
+
+        <!-- Mobile Drawer Toggle -->
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open mobile menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:1.3rem;height:1.3rem;" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
   </header>
 
+  <!-- =========================================================================
+       3. PANORAMIC HERO SECTION (Exact Reference Layout with User's Masterpiece)
+       ========================================================================= -->
   <main>
-    <section class="hero" id="home" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <span class="eyebrow">The art of looking closer</span>
-        <h1 id="hero-title">A world in the <em>tiniest</em> details.</h1>
-        <p class="hero-description">Discover the living heritage of Indian miniature painting, brought to life by senior artist Om Prakash Kumawat and artist Priyanka Kumawat.</p>
-        <a class="text-link" href="#collection">
-          Discover the collection
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <path d="M4 12h15m-6-6 6 6-6 6"></path>
+    <section class="hero-section" id="hero" aria-labelledby="hero-title">
+      <!-- Carousel Slide 1: Featuring User's Uploaded Durbar Masterpiece (image7.jpeg) -->
+      <div class="hero-slide active" data-slide-index="1" style="background-image: url('images/image7.jpeg');">
+        <div class="hero-backdrop-overlay"></div>
+        <div class="hero-container">
+          <div class="hero-content">
+            <div class="hero-kicker">
+              MINIATURE ART
+              <span class="kicker-line"></span>
+            </div>
+            <h1 class="hero-headline" id="hero-title">
+              Timeless<br>Masterpieces
+            </h1>
+            <p class="hero-summary">
+              Explore the world of miniature art — a celebration of culture, detail and stories that live forever.
+            </p>
+            <div class="hero-cta-row">
+              <a href="#art-forms" class="btn-hero-explore">
+                Explore Collection
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+            <!-- Slider Controls: 01 02 03 < > -->
+            <div class="hero-slider-nav">
+              <div class="slider-numbers">
+                <span class="slide-num active" data-slide-target="1">01</span>
+                <span class="slide-num" data-slide-target="2">02</span>
+                <span class="slide-num" data-slide-target="3">03</span>
+              </div>
+              <div class="slider-arrows">
+                <button type="button" class="slide-arrow prev" aria-label="Previous slide">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button type="button" class="slide-arrow next" aria-label="Next slide">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Slide 2: User's Palace Scene Masterpiece (image4.jpeg) -->
+      <div class="hero-slide" data-slide-index="2" style="background-image: url('images/image4.jpeg');">
+        <div class="hero-backdrop-overlay"></div>
+        <div class="hero-container">
+          <div class="hero-content">
+            <div class="hero-kicker">
+              ROYAL DURBAR HERITAGE
+              <span class="kicker-line"></span>
+            </div>
+            <h1 class="hero-headline">
+              The Grand<br>Royal Courts
+            </h1>
+            <p class="hero-summary">
+              Centuries of regal legacy brought alive in single-hair squirrel brushwork and 24K pure gold illumination.
+            </p>
+            <div class="hero-cta-row">
+              <a href="collections.html" class="btn-hero-explore">
+                View Royal Works
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+            <div class="hero-slider-nav">
+              <div class="slider-numbers">
+                <span class="slide-num" data-slide-target="1">01</span>
+                <span class="slide-num active" data-slide-target="2">02</span>
+                <span class="slide-num" data-slide-target="3">03</span>
+              </div>
+              <div class="slider-arrows">
+                <button type="button" class="slide-arrow prev" aria-label="Previous slide">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button type="button" class="slide-arrow next" aria-label="Next slide">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Slide 3: User's Epic Narrative Masterpiece (image6.jpeg) -->
+      <div class="hero-slide" data-slide-index="3" style="background-image: url('images/image6.jpeg');">
+        <div class="hero-backdrop-overlay"></div>
+        <div class="hero-container">
+          <div class="hero-content">
+            <div class="hero-kicker">
+              SACRED DEVOTION &amp; POETRY
+              <span class="kicker-line"></span>
+            </div>
+            <h1 class="hero-headline">
+              Lyrical Songs<br>of the Hills
+            </h1>
+            <p class="hero-summary">
+              Pahari poetics, monsoon romance, and sacred epics hand-painted with patience on antique Wasli paper.
+            </p>
+            <div class="hero-cta-row">
+              <a href="art-traditions.html" class="btn-hero-explore">
+                Discover The Schools
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+            <div class="hero-slider-nav">
+              <div class="slider-numbers">
+                <span class="slide-num" data-slide-target="1">01</span>
+                <span class="slide-num" data-slide-target="2">02</span>
+                <span class="slide-num active" data-slide-target="3">03</span>
+              </div>
+              <div class="slider-arrows">
+                <button type="button" class="slide-arrow prev" aria-label="Previous slide">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button type="button" class="slide-arrow next" aria-label="Next slide">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Vertical Tag: Exact Reference (TRADITIONAL INDIAN MINIATURE ART + Lotus) -->
+      <aside class="hero-vertical-tag" aria-hidden="true">
+        <div class="tag-char-group">
+          <span>TRADITIONAL INDIAN MINIATURE ART</span>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="lotus-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 7 C20 18 16 26 10 29 C18 29 20 22 20 22 C20 22 22 29 30 29 C24 26 20 18 20 7 Z"></path>
+            <path d="M20 15 C17 21 11 26 5 27 C12 28 17 23 18 21"></path>
+            <path d="M20 15 C23 21 29 26 35 27 C28 28 23 23 22 21"></path>
+            <path d="M12 29 C15 32 20 33 28 29"></path>
+            <circle cx="20" cy="33.5" r="1.5" fill="currentColor"></circle>
           </svg>
-        </a>
-      </div>
-      <div class="hero-art">
-        <div class="hero-frame">
-          <img src="images/image7.jpeg" alt="A richly detailed miniature painting of an Indian royal court and palace" fetchpriority="high">
         </div>
-        <span class="hero-caption">Every detail has a story.</span>
-        <span class="hero-stamp" aria-label="Made slowly, by hand">MADE SLOWLY<br>BY HAND<br>✳</span>
-      </div>
+      </aside>
     </section>
 
-    <section class="section collection" id="collection" aria-labelledby="collection-title">
-      <div class="section-heading reveal">
-        <div>
-          <span class="eyebrow">A little world of its own</span>
-          <h2 id="collection-title">The collection</h2>
-        </div>
-        <p class="section-note">Each painting begins with a story and ends with hundreds of tiny, thoughtful details.</p>
-      </div>
-
-      <ul class="filter-list" aria-label="Filter artworks">
-        <li><button class="filter-button" type="button" data-filter="all" aria-pressed="true">All works</button></li>
-        <li><button class="filter-button" type="button" data-filter="painting" aria-pressed="false">Miniature art</button></li>
-        <li><button class="filter-button" type="button" data-filter="process" aria-pressed="false">In the making</button></li>
-        <li><button class="filter-button" type="button" data-filter="studio" aria-pressed="false">Studio</button></li>
-      </ul>
-
-      <div class="gallery">
-        <article class="artwork reveal" data-category="painting">
-          <button class="artwork-image" type="button" data-full-image="images/image4.jpeg" data-image-alt="A hand-painted miniature scene with figures gathered in an ornate palace" aria-label="View Palace stories painting">
-            <img src="images/image4.jpeg" alt="A hand-painted miniature scene with figures gathered in an ornate palace" loading="lazy">
-            <span class="zoom-hint">View artwork</span>
-          </button>
-          <div class="artwork-caption">
-            <div><h3>Palace stories</h3><p>Miniature painting</p></div>
-            <span class="artwork-index">01</span>
+    <!-- =========================================================================
+         4. "EXPLORE BY ART FORM" SECTION (Exact Reference Layout: 4 Rounded Cards)
+         ========================================================================= -->
+    <section class="art-forms-section" id="art-forms" aria-labelledby="art-forms-title">
+      <div class="section-container">
+        <div class="section-header-row">
+          <div>
+            <div class="section-kicker">
+              <span class="kicker-rule"></span>
+              OUR COLLECTION
+            </div>
+            <h2 class="section-main-title" id="art-forms-title">Explore by Art Form</h2>
           </div>
-        </article>
-
-        <article class="artwork reveal" data-category="process">
-          <button class="artwork-image" type="button" data-full-image="images/image2.jpeg" data-image-alt="A miniature painter carefully studying a richly detailed painting at work" aria-label="View A closer look painting process">
-            <img src="images/image2.jpeg" alt="A miniature painter carefully studying a richly detailed painting at work" loading="lazy">
-            <span class="zoom-hint">View artwork</span>
-          </button>
-          <div class="artwork-caption">
-            <div><h3>A closer look</h3><p>Behind the brush</p></div>
-            <span class="artwork-index">02</span>
-          </div>
-        </article>
-
-        <article class="artwork reveal" data-category="painting">
-          <button class="artwork-image" type="button" data-full-image="images/image5.jpeg" data-image-alt="A collection of colourful miniature paintings and handmade natural pigment palettes" aria-label="View Colour, gathered painting">
-            <img src="images/image5.jpeg" alt="A collection of colourful miniature paintings and handmade natural pigment palettes" loading="lazy">
-            <span class="zoom-hint">View artwork</span>
-          </button>
-          <div class="artwork-caption">
-            <div><h3>Colour, gathered</h3><p>Studies in pigment</p></div>
-            <span class="artwork-index">03</span>
-          </div>
-        </article>
-
-        <article class="artwork reveal" data-category="painting">
-          <button class="artwork-image" type="button" data-full-image="images/image7.jpeg" data-image-alt="A vibrant miniature painting of a royal court with a palace, hillside and gathering" aria-label="View The royal gathering painting">
-            <img src="images/image7.jpeg" alt="A vibrant miniature painting of a royal court with a palace, hillside and gathering" loading="lazy">
-            <span class="zoom-hint">View artwork</span>
-          </button>
-          <div class="artwork-caption">
-            <div><h3>The royal gathering</h3><p>Miniature painting</p></div>
-            <span class="artwork-index">04</span>
-          </div>
-        </article>
-
-        <article class="artwork reveal" data-category="studio">
-          <button class="artwork-image" type="button" data-full-image="images/image1.jpeg" data-image-alt="The artists' sunlit studio, filled with paintings and the tools of their craft" aria-label="View Inside the studio">
-            <img src="images/image1.jpeg" alt="The artists' sunlit studio, filled with paintings and the tools of their craft" loading="lazy">
-            <span class="zoom-hint">View artwork</span>
-          </button>
-          <div class="artwork-caption">
-            <div><h3>Inside the studio</h3><p>Where stories begin</p></div>
-            <span class="artwork-index">05</span>
-          </div>
-        </article>
-
-        <article class="artwork reveal" data-category="process">
-          <button class="artwork-image" type="button" data-full-image="images/image6.jpeg" data-image-alt="A hand-painted miniature artwork depicting a colourful Indian scene" aria-label="View Work in progress painting">
-            <img src="images/image6.jpeg" alt="A hand-painted miniature artwork depicting a colourful Indian scene" loading="lazy">
-            <span class="zoom-hint">View artwork</span>
-          </button>
-          <div class="artwork-caption">
-            <div><h3>Work in progress</h3><p>From the artist's table</p></div>
-            <span class="artwork-index">06</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="interlude" id="story" aria-labelledby="story-title">
-      <figure class="interlude-image reveal">
-        <img src="images/image3.jpeg" alt="Artist OM standing beside a hand-painted decorative mural in the studio" loading="lazy">
-      </figure>
-      <div class="interlude-copy reveal">
-        <span class="eyebrow">India's art heritage, carried forward</span>
-        <h2 id="story-title">A tradition in every tiny detail.</h2>
-        <p>Indian miniature painting is a heritage of intricate storytelling, luminous colour and remarkable detail. Each carefully painted line brings its history and artistry into the present.</p>
-        <p>OM &amp; PRIYANKA is led by senior artist Om Prakash Kumawat, alongside artist Priyanka Kumawat. Together, they honour this enduring tradition through thoughtful, hand-painted art.</p>
-        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1rem;">
-          <a class="text-link" href="story.html">
-            The Master's Journey &amp; Lineage
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M4 12h15m-6-6 6 6-6 6"></path>
+          <a href="art-traditions.html" class="view-all-link">
+            View All
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </a>
-          <a class="text-link" href="#studio">
-            Meet the makers
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M4 12h15m-6-6 6 6-6 6"></path>
-            </svg>
+        </div>
+
+        <div class="art-forms-grid">
+          <!-- Card 1: Rajasthani School -->
+          <a href="art-traditions.html#rajasthani" class="artform-card">
+            <div class="card-img-box">
+              <img src="images/school_rajasthani.jpg" alt="Rajasthani School Miniature Art" loading="lazy">
+              <span class="card-badge">Royal Heritage</span>
+            </div>
+            <div class="card-meta">
+              <h3>Rajasthani School</h3>
+              <p>Kishangarh, Mewar &amp; Bundi traditions celebrating heroic romance, Radha-Bani Thani, and lyrical monsoon colours.</p>
+              <div class="card-footer">
+                <span class="artwork-count">120+ Artworks</span>
+                <span class="card-arrow-btn">&rarr;</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 2: Mughal School -->
+          <a href="art-traditions.html#mughal" class="artform-card">
+            <div class="card-img-box">
+              <img src="images/school_mughal.jpg" alt="Mughal School Miniature Art" loading="lazy">
+              <span class="card-badge">Imperial Court</span>
+            </div>
+            <div class="card-meta">
+              <h3>Mughal School</h3>
+              <p>Imperial court realism, intricate single-squirrel-hair portraits, flora-fauna and 24K pure gold leaf borders.</p>
+              <div class="card-footer">
+                <span class="artwork-count">95+ Artworks</span>
+                <span class="card-arrow-btn">&rarr;</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 3: Pahari School -->
+          <a href="art-traditions.html#pahari" class="artform-card">
+            <div class="card-img-box">
+              <img src="images/school_pahari.jpg" alt="Pahari School Miniature Art" loading="lazy">
+              <span class="card-badge">Himalayan Lyricism</span>
+            </div>
+            <div class="card-meta">
+              <h3>Pahari School</h3>
+              <p>Kangra &amp; Basohli poetics, gentle mountain streams, deep saffron ochres and sacred devotion to Krishna.</p>
+              <div class="card-footer">
+                <span class="artwork-count">80+ Artworks</span>
+                <span class="card-arrow-btn">&rarr;</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 4: Deccani School -->
+          <a href="art-traditions.html#deccani" class="artform-card">
+            <div class="card-img-box">
+              <img src="images/school_deccani.jpg" alt="Deccani School Miniature Art" loading="lazy">
+              <span class="card-badge">Golconda Splendor</span>
+            </div>
+            <div class="card-meta">
+              <h3>Deccani School</h3>
+              <p>Lapis lazuli starry nightscapes, Persian elegance, Bijapur royal portraits and mystical courtly rhythms.</p>
+              <div class="card-footer">
+                <span class="artwork-count">65+ Artworks</span>
+                <span class="card-arrow-btn">&rarr;</span>
+              </div>
+            </div>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="section studio" id="studio" aria-labelledby="studio-title">
-      <div class="studio-copy reveal">
-        <span class="eyebrow">A place for patience</span>
-        <h2 id="studio-title">Welcome to our studio.</h2>
-        <p>Paint, paper, pigment, and the gentle rhythm of a brush meeting the page. This is where senior artist Om Prakash Kumawat and artist Priyanka Kumawat honour Indian miniature-painting traditions through work made with patience and care.</p>
-        <p>For art collectors, galleries and international buyers, each miniature offers a considered connection to India's rich artistic heritage.</p>
-        <a class="text-link" href="#collection">
-          Explore the paintings
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <path d="M4 12h15m-6-6 6 6-6 6"></path>
-          </svg>
-        </a>
+    <!-- =========================================================================
+         5. CURATED ROYAL MASTERPIECES GALLERY (With Filter Pills, Zoom Lightbox & Inquiry)
+         ========================================================================= -->
+    <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
+      <div class="section-container">
+        <div class="section-header-row">
+          <div>
+            <div class="section-kicker">
+              <span class="kicker-rule"></span>
+              ORIGINAL ATELIER WORKS
+            </div>
+            <h2 class="section-main-title" id="gallery-title">The Curated Masterpieces</h2>
+          </div>
+          <p style="max-width: 24rem; font-size: 0.9rem; color: var(--ink-soft); line-height: 1.6;">
+            Each work is painted with natural stone minerals, real 24K Hilkari gold, and centuries-old Wasli paper.
+          </p>
+        </div>
+
+        <!-- Filter Pills -->
+        <div class="filter-tabs-row" role="tablist" aria-label="Filter gallery works">
+          <button type="button" class="gallery-filter-btn active" data-filter="all">All Masterpieces</button>
+          <button type="button" class="gallery-filter-btn" data-filter="durbar">Royal Durbars &amp; Courts</button>
+          <button type="button" class="gallery-filter-btn" data-filter="religious">Sacred &amp; Krishna Leela</button>
+          <button type="button" class="gallery-filter-btn" data-filter="process">Studio &amp; Making</button>
+          <button type="button" class="gallery-filter-btn" data-filter="portraits">Royal Portraits</button>
+        </div>
+
+        <!-- Artworks Grid Featuring User's Images -->
+        <div class="gallery-art-grid">
+          <!-- Artwork 1: Royal Court Durbar (image7.jpeg) -->
+          <article class="gallery-card" data-category="durbar">
+            <div class="gallery-thumb-wrap" data-full-image="images/image7.jpeg" data-image-alt="The Grand Durbar of Maharaja Ranjit Singh">
+              <img src="images/image7.jpeg" alt="The Grand Durbar of Maharaja Ranjit Singh" loading="lazy">
+              <div class="gallery-zoom-overlay">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:1.2rem;height:1.2rem;" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                Zoom Artwork
+              </div>
+            </div>
+            <div class="gallery-card-body">
+              <span class="artwork-provenance-tag">Sikh Durbar &bull; Wasli &bull; 24K Gold</span>
+              <h3 class="artwork-title">The Grand Royal Gathering</h3>
+              <p class="artwork-spec">Hand-painted with natural mineral pigments, cinnabar, lapis lazuli and pure 24K Hilkari gold leaf.</p>
+              <div class="artwork-card-actions">
+                <span class="artwork-price-val" data-price-inr="320000">₹ 3,20,000</span>
+                <button type="button" class="btn-acquire" data-action="add-to-bag" data-art-id="art-02" data-art-title="The Grand Royal Gathering" data-art-school="Sikh Durbar Heritage" data-art-price="320000" data-art-img="images/image7.jpeg">
+                  Inquire / Add
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Artwork 2: Princess with Lotus (dropdown_art.jpg) -->
+          <article class="gallery-card" data-category="portraits">
+            <div class="gallery-thumb-wrap" data-full-image="images/dropdown_art.jpg" data-image-alt="Princess with Pink Lotus">
+              <img src="images/dropdown_art.jpg" alt="Princess with Pink Lotus" loading="lazy">
+              <div class="gallery-zoom-overlay">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:1.2rem;height:1.2rem;" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                Zoom Artwork
+              </div>
+            </div>
+            <div class="gallery-card-body">
+              <span class="artwork-provenance-tag">Kishangarh &bull; Radha Bani Thani Style</span>
+              <h3 class="artwork-title">Princess with Pink Lotus</h3>
+              <p class="artwork-spec">Translucent odhna veil, emerald necklace detail, and delicate almond eyes created with single squirrel-hair brush.</p>
+              <div class="artwork-card-actions">
+                <span class="artwork-price-val" data-price-inr="195000">₹ 1,95,000</span>
+                <button type="button" class="btn-acquire" data-action="add-to-bag" data-art-id="art-01" data-art-title="Princess with Pink Lotus" data-art-school="Kishangarh School" data-art-price="195000" data-art-img="images/dropdown_art.jpg">
+                  Inquire / Add
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Artwork 3: Palace Assembly (image4.jpeg) -->
+          <article class="gallery-card" data-category="durbar">
+            <div class="gallery-thumb-wrap" data-full-image="images/image4.jpeg" data-image-alt="Palace Stories & Assembly">
+              <img src="images/image4.jpeg" alt="Palace Stories & Assembly" loading="lazy">
+              <div class="gallery-zoom-overlay">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:1.2rem;height:1.2rem;" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                Zoom Artwork
+              </div>
+            </div>
+            <div class="gallery-card-body">
+              <span class="artwork-provenance-tag">Mughal &bull; Imperial Court Architecture</span>
+              <h3 class="artwork-title">Palace Stories &amp; Assemblage</h3>
+              <p class="artwork-spec">Marble arches, royal courtiers and miniature garden landscapes painted with handmade natural mineral colours.</p>
+              <div class="artwork-card-actions">
+                <span class="artwork-price-val" data-price-inr="245000">₹ 2,45,000</span>
+                <button type="button" class="btn-acquire" data-action="add-to-bag" data-art-id="art-03" data-art-title="Palace Stories &amp; Assemblage" data-art-school="Mughal School" data-art-price="245000" data-art-img="images/image4.jpeg">
+                  Inquire / Add
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Artwork 4: Sacred Narrative (image6.jpeg) -->
+          <article class="gallery-card" data-category="religious">
+            <div class="gallery-thumb-wrap" data-full-image="images/image6.jpeg" data-image-alt="Work in Progress Epic Narrative">
+              <img src="images/image6.jpeg" alt="Work in Progress Epic Narrative" loading="lazy">
+              <div class="gallery-zoom-overlay">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:1.2rem;height:1.2rem;" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                Zoom Artwork
+              </div>
+            </div>
+            <div class="gallery-card-body">
+              <span class="artwork-provenance-tag">Malwa &bull; Sacred Epic Vignettes</span>
+              <h3 class="artwork-title">Epic Narrative in Rhythm</h3>
+              <p class="artwork-spec">Deep mineral vermilion and malachite grounds recounting ancient legends and sacred royal ceremonies.</p>
+              <div class="artwork-card-actions">
+                <span class="artwork-price-val" data-price-inr="185000">₹ 1,85,000</span>
+                <button type="button" class="btn-acquire" data-action="add-to-bag" data-art-id="art-04" data-art-title="Epic Narrative in Rhythm" data-art-school="Malwa Heritage" data-art-price="185000" data-art-img="images/image6.jpeg">
+                  Inquire / Add
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Artwork 5: Colour, Gathered (image5.jpeg) -->
+          <article class="gallery-card" data-category="process">
+            <div class="gallery-thumb-wrap" data-full-image="images/image5.jpeg" data-image-alt="Handmade Mineral Pigments in the Atelier">
+              <img src="images/image5.jpeg" alt="Handmade Mineral Pigments in the Atelier" loading="lazy">
+              <div class="gallery-zoom-overlay">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:1.2rem;height:1.2rem;" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                Zoom Artwork
+              </div>
+            </div>
+            <div class="gallery-card-body">
+              <span class="artwork-provenance-tag">Atelier Alchemy &bull; Natural Stones</span>
+              <h3 class="artwork-title">Studies in Pigment &amp; Stone</h3>
+              <p class="artwork-spec">Raw gemstones, conch shell white (Shankh), lapis lazuli, and tree gum arabic binders prepared by Master Om Prakash.</p>
+              <div class="artwork-card-actions">
+                <span class="artwork-price-val" data-price-inr="140000">₹ 1,40,000</span>
+                <button type="button" class="btn-acquire" data-action="add-to-bag" data-art-id="art-05" data-art-title="Studies in Pigment &amp; Stone" data-art-school="Atelier Heritage" data-art-price="140000" data-art-img="images/image5.jpeg">
+                  Inquire / Add
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Artwork 6: The Master at Work (image2.jpeg) -->
+          <article class="gallery-card" data-category="process">
+            <div class="gallery-thumb-wrap" data-full-image="images/image2.jpeg" data-image-alt="Master Artist Painting with Single Hair Brush">
+              <img src="images/image2.jpeg" alt="Master Artist Painting with Single Hair Brush" loading="lazy">
+              <div class="gallery-zoom-overlay">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:1.2rem;height:1.2rem;" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                Zoom Artwork
+              </div>
+            </div>
+            <div class="gallery-card-body">
+              <span class="artwork-provenance-tag">Living Heritage &bull; Single Hair Brush</span>
+              <h3 class="artwork-title">A Closer Look Behind the Brush</h3>
+              <p class="artwork-spec">Precision shading (pardaz) perfected over 26 years of meditation, patience and devotion to classical Indian miniature art.</p>
+              <div class="artwork-card-actions">
+                <span class="artwork-price-val" data-price-inr="160000">₹ 1,60,000</span>
+                <button type="button" class="btn-acquire" data-action="add-to-bag" data-art-id="art-06" data-art-title="A Closer Look Behind the Brush" data-art-school="Guru-Shishya Heritage" data-art-price="160000" data-art-img="images/image2.jpeg">
+                  Inquire / Add
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-      <figure class="studio-photo reveal">
-        <img src="images/image1.jpeg" alt="A glimpse inside the OM and Priyanka miniature art studio" loading="lazy">
-        <figcaption>A little glimpse of where it all happens.</figcaption>
-      </figure>
     </section>
 
-    <section class="closing" aria-labelledby="closing-title">
-      <span class="closing-mark" aria-hidden="true">O</span>
-      <span class="eyebrow">For the love of little things</span>
-      <h2 id="closing-title">Look a little closer.</h2>
-      <p>For collectors, galleries and art lovers around the world: discover a painting to linger over, a story to take home, and India's miniature-art heritage in every tiny detail.</p>
-      <a class="text-link" href="#collection">
-        Return to the collection
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="M4 12h15m-6-6 6 6-6 6"></path>
-        </svg>
-      </a>
+    <!-- =========================================================================
+         6. THE MASTERS' LINEAGE & ROYAL HERITAGE INTERLUDE (image3.jpeg)
+         ========================================================================= -->
+    <section class="heritage-interlude-section" id="story" aria-labelledby="heritage-title">
+      <div class="section-container">
+        <div class="heritage-grid">
+          <div class="heritage-visual">
+            <div class="heritage-frame">
+              <img src="images/image3.jpeg" alt="Senior Artist Om Prakash Kumawat standing beside miniature mural in studio" loading="lazy">
+            </div>
+            <div class="heritage-badge">
+              "Every brushstroke carries 500 years of living history."
+            </div>
+          </div>
+          <div class="heritage-copy">
+            <div class="section-kicker">
+              <span class="kicker-rule"></span>
+              26+ YEARS PRESERVING THE CLASSICAL SCHOOLS
+            </div>
+            <h2 id="heritage-title">India's Living Miniature Art Heritage</h2>
+            <p>
+              Led by senior artist Om Prakash Kumawat alongside artist Priyanka Kumawat, OM &amp; PRIYANKA is an internationally celebrated atelier dedicated to the unbroken lineage of royal Indian miniature painting.
+            </p>
+            <p>
+              From private presidential collections at Rashtrapati Bhavan and the Prime Minister’s Office to prestigious art collectors in London, New York, Paris and Tokyo, their masterworks revive the sacred alchemy of natural gemstone pigments, handmade Wasli folios, and 24K Hilkari gold illumination.
+            </p>
+            <div class="heritage-actions">
+              <a href="story.html" class="btn-gold-solid">
+                Read Master's Journey
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:1rem;height:1rem;" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <button type="button" class="btn-gold-outline" data-action="open-commission-modal">
+                Request Bespoke Commission
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. ATELIER & STUDIO SECTION (image1.jpeg)
+         ========================================================================= -->
+    <section class="studio-section" id="studio" aria-labelledby="studio-title">
+      <div class="section-container">
+        <div class="studio-grid">
+          <div class="studio-copy">
+            <div class="section-kicker">
+              <span class="kicker-rule"></span>
+              A PLACE FOR PATIENCE
+            </div>
+            <h2 id="studio-title">Welcome to Our Jaipur Atelier</h2>
+            <p>
+              Stone mortars grinding lapis lazuli and malachite, the fragrant scent of antique handmade Wasli paper, and the rhythmic stroke of a single-hair squirrel brush meeting the page in silence.
+            </p>
+            <p>
+              For art connoisseurs, museums, interior designers, and international buyers, our Jaipur studio offers a direct, personal communion with India's sacred artistic genius. We welcome collectors for private viewings and curated commissions.
+            </p>
+            <div style="margin-top: 1.8rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="workshops.html" class="btn-hero-explore">
+                Explore Atelier Classes
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <a href="contact.html" class="btn-acquire" style="padding: 0.88rem 1.6rem; border-color: var(--ink);">
+                Book Atelier Visit
+              </a>
+            </div>
+          </div>
+          <div class="studio-photo-frame">
+            <img src="images/image1.jpeg" alt="Inside the sunlit OM & PRIYANKA miniature art atelier in Jaipur" loading="lazy">
+            <div class="studio-caption">
+              Where hundreds of tiny thoughtful details come alive.
+            </div>
+          </div>
+        </div>
+
+        <!-- Four Key Milestones Strip -->
+        <div class="stats-strip">
+          <div class="stat-box">
+            <div class="stat-num">26+</div>
+            <div class="stat-label">Years Master Artistry</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">500+</div>
+            <div class="stat-label">Heirloom Works in Collections</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">18+</div>
+            <div class="stat-label">Countries with Collectors</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Hand-Ground Natural Minerals</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         8. BESPOKE ROYAL COMMISSIONS BANNER
+         ========================================================================= -->
+    <section style="background: linear-gradient(135deg, #18241d 0%, #101813 100%); color: #ffffff; padding: 5rem 0; border-top: 1px solid rgba(197, 160, 89, 0.3); border-bottom: 1px solid rgba(197, 160, 89, 0.3);">
+      <div class="section-container" style="text-align: center; max-width: 800px;">
+        <div style="font-size: 2rem; color: var(--gold-light); margin-bottom: 1rem;">◈</div>
+        <div class="section-kicker" style="color: var(--gold-light); justify-content: center;">
+          <span class="kicker-rule" style="background: currentColor;"></span>
+          BESPOKE HEIRLOOM COMMISSIONS
+          <span class="kicker-rule" style="background: currentColor;"></span>
+        </div>
+        <h2 style="font-family: var(--font-serif); font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight: 400; margin-bottom: 1.2rem; line-height: 1.15;">
+          Have a Legacy Masterpiece Painted for Your Home or Gallery
+        </h2>
+        <p style="color: #d0dcd4; font-size: 1.05rem; line-height: 1.8; margin-bottom: 2.2rem;">
+          From ancestral royal durbar portraits to personalized sacred Pichwai paintings, Senior Artist Om Prakash Kumawat crafts one-of-a-kind bespoke commissions tailored to your family's heritage and architectural space.
+        </p>
+        <button type="button" class="btn-gold-solid gold-pulse-target" data-action="open-commission-modal" style="padding: 1rem 2.2rem; font-size: 0.9rem;">
+          Begin Custom Commission Inquiry &rarr;
+        </button>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <a class="footer-brand" href="#home">OM &amp; PRIYANKA</a>
-    <p>Miniature art, made by hand.</p>
-    <p>&copy; <span id="current-year"></span> OM &amp; PRIYANKA</p>
+  <!-- =========================================================================
+       9. MASTER FOOTER
+       ========================================================================= -->
+  <footer class="master-footer">
+    <div class="section-container">
+      <div class="footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="site-brand" style="margin-bottom: 0.5rem;">
+            <div class="brand-title-wrap">
+              <span class="brand-name" style="font-size: 1.3rem;">OM <span class="amp">&amp;</span> PRIYANKA</span>
+              <span class="brand-subline">MINIATURE ART ATELIER</span>
+            </div>
+          </a>
+          <p>
+            An internationally renowned atelier honoring India's classical miniature painting traditions. Hand-painted on antique Wasli paper with pure 24K Hilkari gold and gemstone pigments.
+          </p>
+          <div style="margin-top: 1.5rem; display: flex; gap: 0.8rem; align-items: center;">
+            <a href="https://wa.me/919829000000" target="_blank" rel="noopener noreferrer" style="color: #25D366; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem;">
+              <span>💬 WhatsApp Concierge</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links: The Schools -->
+        <div class="footer-col">
+          <h4>Art &amp; Traditions</h4>
+          <ul class="footer-links-list">
+            <li><a href="art-traditions.html#rajasthani">Rajasthani School</a></li>
+            <li><a href="art-traditions.html#mughal">Mughal Durbar School</a></li>
+            <li><a href="art-traditions.html#pahari">Pahari Kangra School</a></li>
+            <li><a href="art-traditions.html#deccani">Deccani Golconda School</a></li>
+            <li><a href="art-traditions.html#sikh">Sikh Durbar Heritage</a></li>
+            <li><a href="art-traditions.html#malwa">Malwa &amp; Central India</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links: Pages -->
+        <div class="footer-col">
+          <h4>Atelier &amp; Works</h4>
+          <ul class="footer-links-list">
+            <li><a href="collections.html">Our Collections</a></li>
+            <li><a href="story.html">Our Story &amp; Lineage</a></li>
+            <li><a href="achievements.html">National Achievements</a></li>
+            <li><a href="workshops.html">Workshops &amp; Classes</a></li>
+            <li><a href="shop.html">Shop Original Paintings</a></li>
+            <li><a href="contact.html">Contact &amp; Studio Visits</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter & Authenticity -->
+        <div class="footer-col newsletter-box">
+          <h4>Collector Circle</h4>
+          <p>Receive private catalog previews of new heirloom miniature artworks and upcoming Jaipur atelier masterclasses.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to the OM & PRIYANKA Collector Circle.'); this.reset();">
+            <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Email address for newsletter">
+            <button type="submit" class="newsletter-btn">Join</button>
+          </form>
+          <div style="margin-top: 1.2rem; font-size: 0.72rem; color: #728479; line-height: 1.5;">
+            ✦ Every artwork includes Certificate of Provenance &amp; Authenticity signed by Master Om Prakash Kumawat.
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="footer-bottom-row">
+        <div>
+          &copy; <span id="footer-year">2026</span> OM &amp; PRIYANKA Miniature Art Atelier. All rights reserved.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="story.html" style="color: inherit;">Heritage Lineage</a>
+          <a href="contact.html" style="color: inherit;">Jaipur Atelier</a>
+          <a href="shop.html" style="color: inherit;">Worldwide Shipping</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <dialog class="lightbox" aria-label="Artwork preview">
+  <!-- =========================================================================
+       10. COLLECTOR BAG INQUIRY DRAWER (SLIDE-OUT CART WITH CURRENCY CONVERSION)
+       ========================================================================= -->
+  <div class="collector-drawer-backdrop" id="collector-drawer-backdrop" aria-hidden="true">
+    <div class="collector-drawer" role="dialog" aria-labelledby="drawer-heading">
+      <div class="drawer-header">
+        <h3 id="drawer-heading">Collector Bag &bull; Inquiries</h3>
+        <button type="button" class="drawer-close-btn" id="drawer-close-btn" aria-label="Close collector bag">&times;</button>
+      </div>
+      <div class="drawer-body">
+        <div id="drawer-items-list">
+          <!-- Dynamic Cart Items Injected by navbar.js -->
+        </div>
+        <div class="drawer-trust-badges">
+          <strong>Atelier Collector Guarantees:</strong>
+          <ul>
+            <li>Original hand-painted art on antique handmade Wasli</li>
+            <li>Genuine 24K pure Hilkari gold &amp; natural mineral colors</li>
+            <li>Worldwide insured museum-grade express transit</li>
+            <li>Certificate of Authenticity with artist seal</li>
+          </ul>
+        </div>
+      </div>
+      <div class="drawer-footer">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; font-weight: 600;">
+          <span>Estimated Total:</span>
+          <span id="drawer-subtotal-price" style="font-size: 1.15rem; color: var(--rust-dark);">₹ 5,15,000</span>
+        </div>
+        <a href="https://wa.me/919829000000?text=Hello%20Master%20Om%20Prakash%20Kumawat,%20I%20am%20interested%20in%20acquiring%20miniature%20paintings%20from%20your%20atelier." target="_blank" rel="noopener noreferrer" class="btn-drawer-whatsapp">
+          <span>💬 Inquire Directly via WhatsApp</span>
+        </a>
+        <button type="button" class="btn-drawer-checkout" onclick="document.getElementById('collector-drawer-backdrop').classList.remove('is-open'); document.getElementById('contact-modal-backdrop').classList.add('is-open');">
+          Submit Formal Acquisition Inquiry
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       11. INTERACTIVE SEARCH MODAL (SEARCH ACROSS ALL PAGES & WORKS)
+       ========================================================================= -->
+  <div class="modal-backdrop" id="search-modal-backdrop" aria-hidden="true">
+    <div class="modal-box search-modal-box" role="dialog" aria-labelledby="search-modal-title">
+      <button type="button" class="modal-close-btn" aria-label="Close search modal">&times;</button>
+      <h3 id="search-modal-title">Search Atelier Masterpieces &amp; Heritage</h3>
+      <p class="modal-sub">Search by classical school, theme, technique or historical durbar chronicle.</p>
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="search-input" class="search-input-field" placeholder="Search 'Lotus', 'Mughal', 'Durbar', 'Wasli', 'Workshop'..." autocomplete="off">
+      </div>
+      <div class="search-quick-tags">
+        <span style="font-size: 0.72rem; color: var(--ink-soft); font-weight: 600;">Quick searches:</span>
+        <button type="button" class="search-tag-pill" data-tag="Lotus">Princess with Lotus</button>
+        <button type="button" class="search-tag-pill" data-tag="Mughal">Mughal Realism</button>
+        <button type="button" class="search-tag-pill" data-tag="Durbar">Royal Durbar</button>
+        <button type="button" class="search-tag-pill" data-tag="Kangra">Pahari Kangra</button>
+        <button type="button" class="search-tag-pill" data-tag="Commission">Bespoke Commission</button>
+        <button type="button" class="search-tag-pill" data-tag="Masterclass">Atelier Workshop</button>
+      </div>
+      <div id="search-results" style="max-height: 320px; overflow-y: auto;"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       12. BESPOKE COMMISSION MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="commission-modal-backdrop" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-labelledby="comm-title">
+      <button type="button" class="modal-close-btn" aria-label="Close commission modal">&times;</button>
+      <h3 id="comm-title">Bespoke Royal Heritage Commission</h3>
+      <p class="modal-sub">Commission Senior Artist Om Prakash Kumawat to paint a custom heirloom miniature artwork.</p>
+      <form id="commission-form">
+        <div class="form-group">
+          <label for="comm-name">Your Full Name</label>
+          <input type="text" id="comm-name" class="form-control" required placeholder="Lord / Lady / Collector Name">
+        </div>
+        <div class="form-group">
+          <label for="comm-email">Email Address</label>
+          <input type="email" id="comm-email" class="form-control" required placeholder="collector@domain.com">
+        </div>
+        <div class="form-group">
+          <label for="comm-phone">WhatsApp / Phone Number</label>
+          <input type="tel" id="comm-phone" class="form-control" placeholder="+91 98290 00000 / +1...">
+        </div>
+        <div class="form-group">
+          <label for="comm-school">Desired Classical School / Subject</label>
+          <select id="comm-school" class="form-control">
+            <option>Royal Durbar &amp; Court Scene (Mughal / Sikh)</option>
+            <option>Sacred Devotional &amp; Pichwai (Radha-Krishna / Shrinathji)</option>
+            <option>Custom Family Royal Portrait in Miniature Style</option>
+            <option>Rajasthani Romance (Kishangarh / Mewar)</option>
+            <option>Architectural Miniature Painting</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="comm-details">Brief Details or Preferred Dimensions</label>
+          <textarea id="comm-details" class="form-control" rows="3" placeholder="Describe the story, space, or specific royal elements you wish to feature..."></textarea>
+        </div>
+        <button type="submit" class="btn-modal-submit">Submit Bespoke Commission Inquiry</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       13. WORKSHOP ENROLLMENT MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="workshop-modal-backdrop" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-labelledby="wk-title">
+      <button type="button" class="modal-close-btn" aria-label="Close workshop modal">&times;</button>
+      <h3 id="wk-title">Reserve Atelier Masterclass Seat</h3>
+      <p class="modal-sub">Learn the Guru-Shishya tradition from Master Om Prakash Kumawat in Jaipur or Online.</p>
+      <form id="workshop-form">
+        <div class="form-group">
+          <label for="wk-name">Student / Artist Name</label>
+          <input type="text" id="wk-name" class="form-control" required placeholder="Full Name">
+        </div>
+        <div class="form-group">
+          <label for="wk-email">Email Address</label>
+          <input type="email" id="wk-email" class="form-control" required placeholder="artist@domain.com">
+        </div>
+        <div class="form-group">
+          <label for="wk-mode">Masterclass Format</label>
+          <select id="wk-mode" class="form-control">
+            <option>In-Person Atelier Immersion (Jaipur Studio &bull; 7 Days)</option>
+            <option>Online Global Masterclass (Weekend Intensive &bull; 4 Weeks)</option>
+            <option>Single-Hair Squirrel Brush &amp; Gold Illumination Workshop</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-modal-submit">Confirm Reservation Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       14. COLLECTOR PROFILE MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="user-modal-backdrop" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-labelledby="usr-title">
+      <button type="button" class="modal-close-btn" aria-label="Close profile modal">&times;</button>
+      <h3 id="usr-title">Collector Circle Portal</h3>
+      <p class="modal-sub">Sign in or register to track commissions, view certificates of authenticity and private folios.</p>
+      <form id="user-form">
+        <div class="form-group">
+          <label for="usr-email">Registered Email</label>
+          <input type="email" id="usr-email" class="form-control" required placeholder="collector@domain.com">
+        </div>
+        <div class="form-group">
+          <label for="usr-pass">Password / Collector ID</label>
+          <input type="password" id="usr-pass" class="form-control" required placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn-modal-submit">Access Collector Circle</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       15. CONTACT ATELIER CONCIERGE MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="contact-modal-backdrop" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-labelledby="cnt-title">
+      <button type="button" class="modal-close-btn" aria-label="Close contact modal">&times;</button>
+      <h3 id="cnt-title">Atelier Inquiries &amp; Acquisitions</h3>
+      <p class="modal-sub">Our concierge will prepare provenance documentation, insured shipping quotes, and high-resolution details.</p>
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="cnt-name">Name</label>
+          <input type="text" id="cnt-name" class="form-control" required placeholder="Your Name">
+        </div>
+        <div class="form-group">
+          <label for="cnt-email">Email</label>
+          <input type="email" id="cnt-email" class="form-control" required placeholder="name@domain.com">
+        </div>
+        <div class="form-group">
+          <label for="cnt-msg">Message or Artwork Reference</label>
+          <textarea id="cnt-msg" class="form-control" rows="3" required placeholder="Inquiring about artwork acquisition, studio visit in Jaipur, or custom framing..."></textarea>
+        </div>
+        <button type="submit" class="btn-modal-submit">Send Inquiry to Atelier</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       16. FULL-SCREEN ARTWORK LIGHTBOX DIALOG
+       ========================================================================= -->
+  <dialog class="lightbox" id="artwork-lightbox" aria-label="High-resolution artwork inspection">
     <div class="lightbox-inner">
-      <img src="" alt="">
-      <button class="lightbox-close" type="button" aria-label="Close artwork preview">&times;</button>
+      <img src="" alt="Full-screen miniature art view">
+      <button type="button" class="lightbox-close-btn" aria-label="Close artwork preview">&times;</button>
     </div>
   </dialog>
 
-  <script>
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navigation = document.querySelector(".nav-links");
+  <!-- =========================================================================
+       17. MOBILE NAVIGATION DRAWER
+       ========================================================================= -->
+  <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop" aria-hidden="true">
+    <div class="mobile-drawer" role="dialog" aria-labelledby="mobile-nav-title">
+      <div class="mobile-drawer-header">
+        <span id="mobile-nav-title" style="font-family: var(--font-display); font-size: 0.95rem; font-weight: 600; color: var(--ink-rich);">
+          OM &amp; PRIYANKA
+        </span>
+        <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close navigation">&times;</button>
+      </div>
+      <div class="mobile-drawer-body">
+        <a href="index.html" class="mobile-drawer-link active">
+          <span>Home</span>
+          <span class="badge-num">01</span>
+        </a>
+        <a href="art-traditions.html" class="mobile-drawer-link">
+          <span>Art &amp; Traditions</span>
+          <span class="badge-num">02</span>
+        </a>
+        <a href="collections.html" class="mobile-drawer-link">
+          <span>Our Collections</span>
+          <span class="badge-num">03</span>
+        </a>
+        <a href="story.html" class="mobile-drawer-link">
+          <span>Our Story</span>
+          <span class="badge-num">04</span>
+        </a>
+        <a href="achievements.html" class="mobile-drawer-link">
+          <span>Achievements</span>
+          <span class="badge-num">05</span>
+        </a>
+        <a href="workshops.html" class="mobile-drawer-link">
+          <span>Workshops &amp; Classes</span>
+          <span class="badge-num">06</span>
+        </a>
+        <a href="shop.html" class="mobile-drawer-link">
+          <span>Shop / Enquire</span>
+          <span class="badge-num">07</span>
+        </a>
+        <a href="contact.html" class="mobile-drawer-link">
+          <span>Contact Us</span>
+          <span class="badge-num">08</span>
+        </a>
+      </div>
+      <div class="mobile-drawer-footer">
+        <a href="https://wa.me/919829000000" target="_blank" rel="noopener noreferrer" class="mobile-drawer-contact-btn">
+          <span>💬 WhatsApp Atelier (+91)</span>
+        </a>
+        <button type="button" class="btn-hero-explore" style="width: 100%; justify-content: center;" data-action="toggle-bag" onclick="document.getElementById('mobile-drawer-backdrop').classList.remove('is-open');">
+          Open Collector Bag (<span class="bag-counter-badge" style="position: static; display: inline-flex; width: 1.1rem; height: 1.1rem; margin-left: 0.3rem;">2</span>)
+        </button>
+      </div>
+    </div>
+  </div>
 
-    menuToggle.addEventListener("click", () => {
-      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-      menuToggle.setAttribute("aria-expanded", String(!isOpen));
-      menuToggle.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
-      navigation.classList.toggle("is-open", !isOpen);
-    });
-
-    navigation.addEventListener("click", (event) => {
-      if (event.target.closest("a")) {
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open navigation");
-        navigation.classList.remove("is-open");
-      }
-    });
-
-    document.querySelectorAll(".filter-button").forEach((button) => {
-      button.addEventListener("click", () => {
-        const selectedFilter = button.dataset.filter;
-
-        document.querySelectorAll(".filter-button").forEach((filterButton) => {
-          filterButton.setAttribute("aria-pressed", String(filterButton === button));
-        });
-
-        document.querySelectorAll(".artwork").forEach((artwork) => {
-          artwork.hidden = selectedFilter !== "all" && artwork.dataset.category !== selectedFilter;
-        });
-      });
-    });
-
-    const lightbox = document.querySelector(".lightbox");
-    const lightboxImage = lightbox.querySelector("img");
-
-    document.querySelectorAll("[data-full-image]").forEach((artworkButton) => {
-      artworkButton.addEventListener("click", () => {
-        lightboxImage.src = artworkButton.dataset.fullImage;
-        lightboxImage.alt = artworkButton.dataset.imageAlt;
-        lightbox.showModal();
-      });
-    });
-
-    lightbox.querySelector(".lightbox-close").addEventListener("click", () => lightbox.close());
-    lightbox.addEventListener("click", (event) => {
-      if (event.target === lightbox) {
-        lightbox.close();
-      }
-    });
-    lightbox.addEventListener("close", () => {
-      lightboxImage.removeAttribute("src");
-    });
-
-    document.querySelector("#current-year").textContent = new Date().getFullYear();
-
-    const revealItems = document.querySelectorAll(".reveal");
-
-    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-
-      revealItems.forEach((item) => revealObserver.observe(item));
-    } else {
-      revealItems.forEach((item) => item.classList.add("is-visible"));
-    }
-  </script>
+  <!-- Master Interactive Controller -->
+  <script src="navbar.js"></script>
 </body>
 </html>

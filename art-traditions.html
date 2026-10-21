@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#151c17">
+  <title>Art &amp; Traditions — Classical Schools of Indian Miniature Art | OM &amp; PRIYANKA</title>
+  <meta name="description" content="Explore the six classical schools of Indian miniature painting: Rajasthani, Mughal, Pahari, Deccani, Sikh, and Malwa. Handcrafted on antique Wasli with 24K gold.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="navbar.css">
+  <style>
+    .school-detail-row {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: clamp(2.5rem, 6vw, 5.5rem);
+      align-items: center;
+      padding: clamp(4.5rem, 7vw, 6.5rem) 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .school-detail-row:nth-child(even) {
+      direction: rtl;
+    }
+    .school-detail-row:nth-child(even) > * {
+      direction: ltr;
+    }
+    .school-visual-box {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--gold-border);
+      position: relative;
+    }
+    .school-visual-box img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1.15 / 1;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .school-visual-box:hover img {
+      transform: scale(1.05);
+    }
+    .school-spec-pills {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin: 1.2rem 0 1.8rem;
+    }
+    .spec-pill {
+      background: var(--bg-paper);
+      border: 1px solid var(--line);
+      padding: 0.35rem 0.8rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+      font-weight: 500;
+    }
+    @media (max-width: 900px) {
+      .school-detail-row {
+        grid-template-columns: 1fr;
+        direction: ltr !important;
+      }
+      .school-detail-row:nth-child(even) {
+        direction: ltr !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-curator-bar" role="region" aria-label="Announcement">
+    <div class="top-bar-inner">
+      <div class="top-bar-left">
+        <span>Timeless Art</span>
+        <span class="star-bullet">✦</span>
+        <span>Rooted in Tradition</span>
+        <span class="star-bullet">✦</span>
+        <span>Crafted for Generations</span>
+      </div>
+      <div class="top-bar-right">
+        <span class="top-bar-shipping">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" style="width:1rem;height:1rem;color:var(--gold-light);"><rect x="1" y="3" width="15" height="13" rx="1"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          Worldwide Shipping
+        </span>
+        <span class="top-bar-separator">|</span>
+        <a href="story.html">Our Story</a>
+        <a href="contact.html">Contact</a>
+        <span class="top-bar-separator">|</span>
+        <div class="currency-lang-wrap">
+          <select id="currency-selector" class="currency-dropdown-select" aria-label="Select currency">
+            <option value="INR" selected>INR (₹)</option>
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header" id="master-header">
+    <div class="site-header-inner">
+      <!-- Royal Monogram Brand Logo -->
+      <a href="index.html" class="site-brand" aria-label="OM & PRIYANKA Home">
+        <div class="brand-emblem-wrap">
+          <svg class="brand-emblem-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="50" cy="50" r="46" stroke="#c5a059" stroke-width="1.2" stroke-opacity="0.45" stroke-dasharray="2 2" />
+            <circle cx="50" cy="50" r="42" stroke="#c5a059" stroke-width="0.8" stroke-opacity="0.75" />
+            <path d="M50 4 Q50 8 48 9 Q50 10 50 14 Q50 10 52 9 Q50 8 50 4Z" fill="#c5a059" />
+            <path d="M50 86 Q50 90 48 91 Q50 92 50 96 Q50 92 52 91 Q50 90 50 86Z" fill="#c5a059" />
+            <path d="M14 45 Q17 48 18 50 Q17 52 14 55 Q16 52 18 50 Q16 48 14 45Z" fill="#c5a059" />
+            <path d="M86 45 Q83 48 82 50 Q83 52 86 55 Q84 52 82 50 Q84 48 86 45Z" fill="#c5a059" />
+            <path d="M48 20 C32 20 23 32 23 50 C23 68 32 80 48 80 C64 80 73 68 73 50 C73 32 64 20 48 20 Z M48 24.5 C60.5 24.5 67 34.5 67 50 C67 65.5 60.5 75.5 48 75.5 C35.5 75.5 29 65.5 29 50 C29 34.5 35.5 24.5 48 24.5 Z" fill="#b89b64" />
+            <path d="M38 28 H58 C68 28 74 34 74 43 C74 52 67 58 57 58 H46 V72 H49 C50.5 72 52 73 52 74.5 C52 76 50.5 77 49 77 H35 C33.5 77 32 76 32 74.5 C32 73 33.5 72 35 72 H38 V33 H35 C33.5 33 32 32 32 30.5 C32 29 33.5 28 35 28 Z M46 33 V53 H56 C63 53 67.5 49 67.5 43 C67.5 37 63 33 56 33 Z" fill="#8f723c" />
+          </svg>
+        </div>
+        <div class="brand-title-wrap">
+          <span class="brand-name">OM <span class="amp">&amp;</span> PRIYANKA</span>
+          <span class="brand-subline">MINIATURE ART</span>
+        </div>
+      </a>
+
+      <!-- Primary Navigation Links -->
+      <nav class="primary-nav" aria-label="Main atelier navigation">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item is-current-page has-dropdown">
+          <a href="art-traditions.html" class="nav-link active">
+            Art &amp; Traditions
+            <svg class="nav-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="dropdown-popover art-forms-dropdown">
+            <div class="dropdown-caret"></div>
+            <div class="dropdown-content-grid">
+              <div class="dropdown-schools-list">
+                <a href="#rajasthani" class="dropdown-school-link active" data-school="rajasthani"><span>Rajasthani</span><svg class="item-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="#mughal" class="dropdown-school-link" data-school="mughal"><span>Mughal</span><svg class="item-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="#pahari" class="dropdown-school-link" data-school="pahari"><span>Pahari</span><svg class="item-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="#deccani" class="dropdown-school-link" data-school="deccani"><span>Deccani</span><svg class="item-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="#sikh" class="dropdown-school-link" data-school="sikh"><span>Sikh</span><svg class="item-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <a href="#malwa" class="dropdown-school-link" data-school="malwa"><span>Malwa</span><svg class="item-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                <div class="dropdown-divider"></div>
+                <a href="art-traditions.html" class="dropdown-school-link highlight" data-school="all"><span>All Art Forms</span><svg class="item-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+              </div>
+              <div class="dropdown-feature-card">
+                <div class="dropdown-img-wrap"><img id="dropdown-preview-img" src="images/dropdown_art.jpg" alt="Princess with Lotus" loading="eager"></div>
+                <p id="dropdown-preview-quote" class="dropdown-quote">"Each style tells a different story, all rooted in India’s rich artistic heritage."</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a href="collections.html" class="nav-link">Our Collections</a></li>
+        <li class="nav-item"><a href="story.html" class="nav-link">Our Story</a></li>
+        <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
+        <li class="nav-item"><a href="workshops.html" class="nav-link">Workshops &amp; Classes</a></li>
+        <li class="nav-item"><a href="shop.html" class="nav-link">Shop / Enquire</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="header-actions">
+        <button type="button" class="nav-icon-btn" data-action="open-search-modal" aria-label="Search artworks">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <button type="button" class="nav-icon-btn" data-action="open-user-modal" aria-label="Collector profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </button>
+        <button type="button" class="nav-icon-btn" data-action="toggle-bag" aria-label="View collector bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="bag-counter-badge">2</span>
+        </button>
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open mobile menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:1.3rem;height:1.3rem;" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Hero Banner -->
+  <header class="page-hero">
+    <div class="page-hero-container">
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span>&bull;</span>
+        <span>Art &amp; Traditions</span>
+      </nav>
+      <h1 class="page-hero-title">The Classical Schools of Indian Miniature Art</h1>
+      <p class="page-hero-subtitle">
+        Centuries of imperial durbars, sacred devotion, and Himalayan poetics brought alive through 24K Hilkari gold and single-hair squirrel brushwork.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div class="section-container">
+      <!-- 1. Rajasthani School -->
+      <article class="school-detail-row" id="rajasthani">
+        <div>
+          <div class="section-kicker">
+            <span class="kicker-rule"></span>
+            SCHOOL 01 &bull; ROYAL HERITAGE
+          </div>
+          <h2 class="section-main-title">Rajasthani Tradition: Kishangarh &amp; Mewar</h2>
+          <div class="school-spec-pills">
+            <span class="spec-pill">Radha Bani Thani</span>
+            <span class="spec-pill">Mewar Durbar</span>
+            <span class="spec-pill">Kishangarh Poetics</span>
+            <span class="spec-pill">Natural Cinnabar &amp; Gold</span>
+          </div>
+          <p style="color: var(--ink-soft); font-size: 1rem; line-height: 1.8;">
+            The Rajasthani school represents the soul of Rajput chivalry, lyrical romance, and Krishna devotion. In Kishangarh, the legendary portrait of Radha Bani Thani—with exaggerated arched eyebrows, lotus-petal eyes, and a transparent odhna veil—remains India’s most celebrated archetype of divine beauty.
+          </p>
+          <p style="color: var(--ink-soft); font-size: 1rem; line-height: 1.8; margin-top: 0.8rem;">
+            Master Om Prakash Kumawat paints on antique Wasli with pure mineral vermilion and real Hilkari gold to ensure every nuance of royal jewelry and textile embroidery shines with celestial brilliance.
+          </p>
+          <div style="margin-top: 1.8rem;">
+            <a href="collections.html?school=rajasthani" class="btn-hero-explore">
+              View Rajasthani Artworks &rarr;
+            </a>
+          </div>
+        </div>
+        <div class="school-visual-box">
+          <img src="images/dropdown_art.jpg" alt="Kishangarh Radha Bani Thani with pink lotus" loading="eager">
+        </div>
+      </article>
+
+      <!-- 2. Mughal School -->
+      <article class="school-detail-row" id="mughal">
+        <div>
+          <div class="section-kicker">
+            <span class="kicker-rule"></span>
+            SCHOOL 02 &bull; IMPERIAL REALISM
+          </div>
+          <h2 class="section-main-title">Mughal School: Court Realism &amp; Hashiya</h2>
+          <div class="school-spec-pills">
+            <span class="spec-pill">Akbar &amp; Jahangir Eras</span>
+            <span class="spec-pill">Intricate Hashiya Borders</span>
+            <span class="spec-pill">Single-Hair Realism</span>
+            <span class="spec-pill">Architectural Inlay</span>
+          </div>
+          <p style="color: var(--ink-soft); font-size: 1rem; line-height: 1.8;">
+            Developed in imperial ateliers under emperors Akbar, Jahangir, and Shah Jahan, the Mughal school introduced photographic precision to Indian art. Intricate durbar ceremonies, lifelike portraits, exotic birds, and flora-fauna borders (*hashiya*) are executed with microscopic single squirrel-hair brushes.
+          </p>
+          <p style="color: var(--ink-soft); font-size: 1rem; line-height: 1.8; margin-top: 0.8rem;">
+            Our atelier preserves the authentic Mughal technique of multi-layered Wasli burnishing and lapis lazuli shading, creating historic assemblies that bridge East and West.
+          </p>
+          <div style="margin-top: 1.8rem;">
+            <a href="collections.html?school=mughal" class="btn-hero-explore">
+              View Mughal Artworks &rarr;
+            </a>
+          </div>
+        </div>
+        <div class="school-visual-box">
+          <img src="images/school_mughal.jpg" alt="Mughal imperial court miniature painting" loading="lazy">
+        </div>
+      </article>
+
+      <!-- 3. Pahari School -->
+      <article class="school-detail-row" id="pahari">
+        <div>
+          <div class="section-kicker">
+            <span class="kicker-rule"></span>
+            SCHOOL 03 &bull; HIMALAYAN LYRICISM
+          </div>
+          <h2 class="section-main-title">Pahari School: Kangra &amp; Basohli</h2>
+          <div class="school-spec-pills">
+            <span class="spec-pill">Kangra Valley Poetics</span>
+            <span class="spec-pill">Basohli Fiery Ochres</span>
+            <span class="spec-pill">Gita Govinda Verses</span>
+            <span class="spec-pill">Beetle-Wing Iridescence</span>
+          </div>
+          <p style="color: var(--ink-soft); font-size: 1rem; line-height: 1.8;">
+            Sheltered in the verdant foothills of the Himalayas, Pahari miniatures are renowned for rhythmic line work, tender Radha-Krishna devotion, and lush monsoon foliage. From the fierce, jewel-like beetle-wing tones of Basohli to the lyrical, pastel serenity of Kangra, every painting is a sung verse of divine love.
+          </p>
+          <div style="margin-top: 1.8rem;">
+            <a href="collections.html?school=pahari" class="btn-hero-explore">
+              View Pahari Artworks &rarr;
+            </a>
+          </div>
+        </div>
+        <div class="school-visual-box">
+          <img src="images/school_pahari.jpg" alt="Pahari Kangra miniature painting" loading="lazy">
+        </div>
+      </article>
+
+      <!-- 4. Deccani School -->
+      <article class="school-detail-row" id="deccani">
+        <div>
+          <div class="section-kicker">
+            <span class="kicker-rule"></span>
+            SCHOOL 04 &bull; GOLCONDA SPLENDOR
+          </div>
+          <h2 class="section-main-title">Deccani School: Golconda &amp; Bijapur</h2>
+          <div class="school-spec-pills">
+            <span class="spec-pill">Deep Lapis Skies</span>
+            <span class="spec-pill">Persian Arabesques</span>
+            <span class="spec-pill">Heavy Gold Leaf</span>
+            <span class="spec-pill">Mystical Courtly Rhythms</span>
+          </div>
+          <p style="color: var(--ink-soft); font-size: 1rem; line-height: 1.8;">
+            Flourishing in the wealthy Sultanates of Golconda and Bijapur, Deccani miniatures are distinguished by intense, luminous colors, sensual elegance, and starry midnight skies painted with pure Afghan lapis lazuli stone.
+          </p>
+          <div style="margin-top: 1.8rem;">
+            <a href="collections.html?school=deccani" class="btn-hero-explore">
+              View Deccani Artworks &rarr;
+            </a>
+          </div>
+        </div>
+        <div class="school-visual-box">
+          <img src="images/school_deccani.jpg" alt="Deccani miniature painting" loading="lazy">
+        </div>
+      </article>
+
+      <!-- 5. Sikh School -->
+      <article class="school-detail-row" id="sikh">
+        <div>
+          <div class="section-kicker">
+            <span class="kicker-rule"></span>
+            SCHOOL 05 &bull; MARTIAL GRANDEUR
+          </div>
+          <h2 class="section-main-title">Sikh Heritage: Durbar of Maharaja Ranjit Singh</h2>
+          <div class="school-spec-pills">
+            <span class="spec-pill">Lahore Durbar Chronicles</span>
+            <span class="spec-pill">Gold Canopies &amp; Regalia</span>
+            <span class="spec-pill">Monumental Compositions</span>
+            <span class="spec-pill">Historical Portraiture</span>
+          </div>
+          <p style="color: var(--ink-soft); font-size: 1rem; line-height: 1.8;">
+            Commissioned during the 19th-century golden age of the Sikh Empire, this style celebrates the martial valor, courtly splendour, and diplomatic assembly of the Lahore kingdom under Sher-e-Punjab Maharaja Ranjit Singh.
+          </p>
+          <p style="color: var(--ink-soft); font-size: 1rem; line-height: 1.8; margin-top: 0.8rem;">
+            Master Om Prakash Kumawat spent five years completing his monumental Sikh Durbar canvas, which now resides in an elite international collection.
+          </p>
+          <div style="margin-top: 1.8rem;">
+            <a href="collections.html?school=sikh" class="btn-hero-explore">
+              View Sikh Durbar Artworks &rarr;
+            </a>
+          </div>
+        </div>
+        <div class="school-visual-box">
+          <img src="images/image7.jpeg" alt="Monumental Court of Maharaja Ranjit Singh" loading="lazy">
+        </div>
+      </article>
+
+      <!-- 6. Malwa School -->
+      <article class="school-detail-row" id="malwa" style="border-bottom: none;">
+        <div>
+          <div class="section-kicker">
+            <span class="kicker-rule"></span>
+            SCHOOL 06 &bull; ARCHAIC VIGOR
+          </div>
+          <h2 class="section-main-title">Malwa &amp; Central Indian Heritage</h2>
+          <div class="school-spec-pills">
+            <span class="spec-pill">Deep Chocolate &amp; Red Grounds</span>
+            <span class="spec-pill">Rhythmic Epic Architecture</span>
+            <span class="spec-pill">Ramayana &amp; Bhagavata Narratives</span>
+            <span class="spec-pill">Raw Earth Ochres</span>
+          </div>
+          <p style="color: var(--ink-soft); font-size: 1rem; line-height: 1.8;">
+            Retaining an archaic boldness and geometric strength, Malwa miniatures feature deep chocolate-brown and lac-red backgrounds. Figures in vivid yellow and saffron robes enact epic narratives with dramatic emotional rhythm.
+          </p>
+          <div style="margin-top: 1.8rem;">
+            <a href="collections.html?school=malwa" class="btn-hero-explore">
+              View Malwa Artworks &rarr;
+            </a>
+          </div>
+        </div>
+        <div class="school-visual-box">
+          <img src="images/image6.jpeg" alt="Malwa school epic miniature scene" loading="lazy">
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Master Footer -->
+  <footer class="master-footer">
+    <div class="section-container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="site-brand" style="margin-bottom: 0.5rem;">
+            <div class="brand-title-wrap">
+              <span class="brand-name" style="font-size: 1.3rem;">OM <span class="amp">&amp;</span> PRIYANKA</span>
+              <span class="brand-subline">MINIATURE ART ATELIER</span>
+            </div>
+          </a>
+          <p>
+            An internationally renowned atelier honoring India's classical miniature painting traditions. Hand-painted on antique Wasli paper with pure 24K Hilkari gold and gemstone pigments.
+          </p>
+          <div style="margin-top: 1.5rem;">
+            <a href="https://wa.me/919829000000" target="_blank" rel="noopener noreferrer" style="color: #25D366; font-size: 0.85rem; font-weight: 600;">
+              💬 WhatsApp Concierge
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Art &amp; Traditions</h4>
+          <ul class="footer-links-list">
+            <li><a href="#rajasthani">Rajasthani School</a></li>
+            <li><a href="#mughal">Mughal Durbar School</a></li>
+            <li><a href="#pahari">Pahari Kangra School</a></li>
+            <li><a href="#deccani">Deccani Golconda School</a></li>
+            <li><a href="#sikh">Sikh Durbar Heritage</a></li>
+            <li><a href="#malwa">Malwa &amp; Central India</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Atelier &amp; Works</h4>
+          <ul class="footer-links-list">
+            <li><a href="collections.html">Our Collections</a></li>
+            <li><a href="story.html">Our Story &amp; Lineage</a></li>
+            <li><a href="achievements.html">National Achievements</a></li>
+            <li><a href="workshops.html">Workshops &amp; Classes</a></li>
+            <li><a href="shop.html">Shop Original Paintings</a></li>
+            <li><a href="contact.html">Contact &amp; Studio Visits</a></li>
+          </ul>
+        </div>
+        <div class="footer-col newsletter-box">
+          <h4>Collector Circle</h4>
+          <p>Receive private catalog previews of new heirloom miniature artworks and upcoming Jaipur atelier masterclasses.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing.'); this.reset();">
+            <input type="email" class="newsletter-input" placeholder="Your email" required>
+            <button type="submit" class="newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom-row">
+        <div>&copy; 2026 OM &amp; PRIYANKA Miniature Art Atelier. All rights reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="story.html" style="color: inherit;">Heritage Lineage</a>
+          <a href="contact.html" style="color: inherit;">Jaipur Atelier</a>
+          <a href="shop.html" style="color: inherit;">Worldwide Shipping</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modals & Drawers -->
+  <div class="collector-drawer-backdrop" id="collector-drawer-backdrop" aria-hidden="true">
+    <div class="collector-drawer">
+      <div class="drawer-header">
+        <h3>Collector Bag &bull; Inquiries</h3>
+        <button type="button" class="drawer-close-btn" id="drawer-close-btn">&times;</button>
+      </div>
+      <div class="drawer-body"><div id="drawer-items-list"></div></div>
+      <div class="drawer-footer">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; font-weight: 600;">
+          <span>Estimated Total:</span>
+          <span id="drawer-subtotal-price" style="color: var(--rust-dark); font-size: 1.15rem;">₹ 5,15,000</span>
+        </div>
+        <a href="https://wa.me/919829000000" target="_blank" rel="noopener noreferrer" class="btn-drawer-whatsapp">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="search-modal-backdrop" aria-hidden="true">
+    <div class="modal-box search-modal-box">
+      <button type="button" class="modal-close-btn">&times;</button>
+      <h3>Search Atelier Masterpieces &amp; Heritage</h3>
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="search-input" class="search-input-field" placeholder="Search schools, themes...">
+      </div>
+      <div id="search-results"></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="user-modal-backdrop" aria-hidden="true">
+    <div class="modal-box">
+      <button type="button" class="modal-close-btn">&times;</button>
+      <h3>Collector Circle Portal</h3>
+      <form id="user-form">
+        <div class="form-group"><label>Email</label><input type="email" class="form-control" required></div>
+        <div class="form-group"><label>Password</label><input type="password" class="form-control" required></div>
+        <button type="submit" class="btn-modal-submit">Access Collector Circle</button>
+      </form>
+    </div>
+  </div>
+
+  <dialog class="lightbox" id="artwork-lightbox">
+    <div class="lightbox-inner"><img src="" alt=""><button type="button" class="lightbox-close-btn">&times;</button></div>
+  </dialog>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop" aria-hidden="true">
+    <div class="mobile-drawer">
+      <div class="mobile-drawer-header">
+        <span style="font-family: var(--font-display); font-size: 0.95rem; font-weight: 600;">OM &amp; PRIYANKA</span>
+        <button type="button" class="mobile-drawer-close" id="mobile-drawer-close">&times;</button>
+      </div>
+      <div class="mobile-drawer-body">
+        <a href="index.html" class="mobile-drawer-link"><span>Home</span><span class="badge-num">01</span></a>
+        <a href="art-traditions.html" class="mobile-drawer-link active"><span>Art &amp; Traditions</span><span class="badge-num">02</span></a>
+        <a href="collections.html" class="mobile-drawer-link"><span>Our Collections</span><span class="badge-num">03</span></a>
+        <a href="story.html" class="mobile-drawer-link"><span>Our Story</span><span class="badge-num">04</span></a>
+        <a href="achievements.html" class="mobile-drawer-link"><span>Achievements</span><span class="badge-num">05</span></a>
+        <a href="workshops.html" class="mobile-drawer-link"><span>Workshops &amp; Classes</span><span class="badge-num">06</span></a>
+        <a href="shop.html" class="mobile-drawer-link"><span>Shop / Enquire</span><span class="badge-num">07</span></a>
+        <a href="contact.html" class="mobile-drawer-link"><span>Contact Us</span><span class="badge-num">08</span></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="navbar.js"></script>
+</body>
+</html>
